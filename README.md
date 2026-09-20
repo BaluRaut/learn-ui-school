@@ -76,8 +76,8 @@ git checkout lesson-02-html-structure    # ...keep going, one branch at a time
 learn-ui-school/
 ├── ui/
 │   ├── index.html            # the notice board — semantic HTML, ~80 lines
-│   ├── styles.css            # tokens, layout, components, dark mode — ~60 lines
-│   ├── app.js                # state → render, events, fetch — ~100 lines, no framework
+│   ├── styles.css            # tokens, layout, components, dark mode — ~50 lines
+│   ├── app.js                # state → render, events, fetch — ~90 lines, no framework
 │   ├── mock_api.py           # the tiny counter it talks to (+ ?slow=1 and ?fail=1)
 │   ├── smoke_test.py         # 10 zero-dependency checks: a11y, tokens, the API
 │   └── tests/board.spec.js   # the same intent in Playwright (illustrative)

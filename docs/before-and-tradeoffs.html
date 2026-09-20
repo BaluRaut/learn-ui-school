@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-
-<html lang="mr">
+<html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title data-en="Before &amp;amp; trade-offs — Learn UI School">आधी &amp; फायदे-तोटे — Learn UI School</title>
-<meta content="For every big UI idea: what came before, merits and demerits, and where to use it vs where not." name="description"/>
-<meta content="Before &amp; trade-offs — Learn UI School" property="og:title"/>
-<meta content="For every big UI idea: what came before, merits and demerits, and where to use it vs where not." property="og:description"/>
-<meta content="https://baluraut.github.io/learn-ui-school/images/big-picture-4k.png" property="og:image"/>
-<meta content="website" property="og:type"/>
-<meta content="summary_large_image" name="twitter:card"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Before & trade-offs — Learn UI School</title>
+<meta name="description" content="For every big UI idea: what came before, merits and demerits, and where to use it vs where not.">
+<meta property="og:title" content="Before & trade-offs — Learn UI School">
+<meta property="og:description" content="For every big UI idea: what came before, merits and demerits, and where to use it vs where not.">
+<meta property="og:image" content="https://baluraut.github.io/learn-ui-school/images/big-picture-4k.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <style>
   :root { --bg:#f8fafc; --card:#fff; --ink:#0f172a; --muted:#475569; --line:#e2e8f0; --accent:#db2777; --ok:#16a34a; --blue:#2563eb; --bad:#dc2626; }
   @media (prefers-color-scheme: dark) { :root { --bg:#0b1220; --card:#131c2e; --ink:#e2e8f0; --muted:#94a3b8; --line:#253349; } }
@@ -53,112 +52,90 @@
   .toc a { border:1px solid var(--line); background:var(--card); border-radius:999px; padding:5px 12px; font-size:.82rem; color:var(--muted); text-decoration:none; }
   .toc a:hover { color:var(--ink); border-color:var(--muted); }
 </style>
+</head>
+<body>
 
-<style id="i18n-css">
-#lang-pick{position:fixed;top:10px;right:10px;z-index:9999;font:600 .85rem -apple-system,"Segoe UI",Helvetica,Arial,sans-serif;background:var(--card,#fff);color:var(--ink,#0f172a);border:1px solid var(--line,#e2e8f0);border-radius:999px;padding:6px 12px;box-shadow:0 2px 10px rgba(0,0,0,.08);cursor:pointer}
-html[lang="mr"] body{font-family:"Noto Sans Devanagari","Mukta","Devanagari Sangam MN","Nirmala UI",-apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
-html[lang="mr"] svg text{font-family:"Noto Sans Devanagari","Mukta","Devanagari Sangam MN","Nirmala UI",sans-serif}
-@media print{#lang-pick{display:none}}
-</style></head>
-<body><select aria-label="Language / भाषा" id="lang-pick" onchange="schoolSetLang(this.value)">
-<option value="mr">🇮🇳 मराठी</option><option value="en">🇬🇧 English</option></select>
 <div class="wrap">
 <header>
-<p data-en='&lt;a href="index.html"&gt;← Back to the course home&lt;/a&gt;'><a href="index.html">← कोर्सच्या मुख्य पानाकडे परत</a></p>
-<h1 data-en="⏮️ Before &amp;amp; trade-offs">⏮️ आधी काय होते &amp; फायदे-तोटे</h1>
-<p class="sub" data-en="Every tool replaced something worse — and is itself the wrong tool somewhere. For each big idea: what life was like &lt;b&gt;before&lt;/b&gt;, honest &lt;b&gt;merits ✅ / demerits ❌&lt;/b&gt;, and &lt;b&gt;where to use it 👍 vs not 👎&lt;/b&gt;.">प्रत्येक साधनाने काहीतरी वाईट गोष्ट बदलली — आणि तेच साधन कुठेतरी चुकीचे ठरते. प्रत्येक मोठ्या कल्पनेसाठी: <b>आधी</b> जीवन कसे होते, प्रामाणिक <b>फायदे ✅ / तोटे ❌</b>, आणि <b>कुठे वापरावी 👍 विरुद्ध कुठे नाही 👎</b>.</p>
-<nav class="toc" data-en='&lt;a href="#vanilla"&gt;🍦 Vanilla vs framework&lt;/a&gt;&lt;a href="#css"&gt;🎨 Utility CSS vs tokens&lt;/a&gt;&lt;a href="#spa"&gt;🧭 SPA vs server-rendered&lt;/a&gt;&lt;a href="#a11y"&gt;♿ Accessibility&lt;/a&gt;&lt;a href="#e2e"&gt;🧪 End-to-end tests&lt;/a&gt;&lt;a href="#static"&gt;🚚 Static hosting vs a server&lt;/a&gt;&lt;a href="#ds"&gt;🎽 Design systems&lt;/a&gt;'><a href="#vanilla">🍦 साधे JS विरुद्ध framework</a><a href="#css">🎨 Utility CSS विरुद्ध tokens</a><a href="#spa">🧭 SPA विरुद्ध server-rendered</a><a href="#a11y">♿ सुलभता</a><a href="#e2e">🧪 End-to-end चाचण्या</a><a href="#static">🚚 Static hosting विरुद्ध server</a><a href="#ds">🎽 Design systems</a></nav>
+  <p><a href="index.html">← Back to the course home</a></p>
+  <h1>⏮️ Before &amp; trade-offs</h1>
+  <p class="sub">Every tool replaced something worse — and is itself the wrong tool somewhere. For each big idea: what life was like <b>before</b>, honest <b>merits ✅ / demerits ❌</b>, and <b>where to use it 👍 vs not 👎</b>.</p>
+  <nav class="toc"><a href="#vanilla">🍦 Vanilla vs framework</a><a href="#css">🎨 Utility CSS vs tokens</a><a href="#spa">🧭 SPA vs server-rendered</a><a href="#a11y">♿ Accessibility</a><a href="#e2e">🧪 End-to-end tests</a><a href="#static">🚚 Static hosting vs a server</a><a href="#ds">🎽 Design systems</a></nav>
 </header>
+
 <section class="term" id="vanilla" style="--c:#db2777">
-<h2 data-en="🍦 Vanilla JS vs a framework — lessons 05, 07">🍦 साधे JavaScript विरुद्ध framework — धडे 05, 07</h2>
-<div class="hist"><b data-en="⏮️ Before frameworks (jQuery era, ~2010)">⏮️ Frameworks आधी (jQuery चे युग, ~2010)</b><p data-en="Pages were edited by hand: find the element, change its text, remember to update the three other places that show the same number. State lived in the DOM and nowhere else — and drifted.">पाने हाताने बदलली जायची: element शोधा, त्याचा मजकूर बदला, तोच आकडा दाखवणाऱ्या इतर तीन जागा बदलायचे लक्षात ठेवा. State फक्त DOM मध्ये राहायचे — आणि भरकटायचे.</p></div>
-<div class="quad">
-<div class="q merit"><h4 data-en="✅ Merits">✅ फायदे</h4><ul><li data-en="vanilla: zero build, zero bytes, nothing to upgrade; fine for boards and widgets">साधे JS: build नाही, bytes नाहीत, upgrade करायला काही नाही; फलक आणि widgets ना ठीक</li><li data-en="framework: state → view for free, components, an ecosystem of parts">framework: state → view फुकट, components, भागांची परिसंस्था</li></ul></div>
-<div class="q demerit"><h4 data-en="❌ Demerits">❌ तोटे</h4><ul><li data-en="vanilla: you write render() and diffing yourself as the app grows">साधे JS: ॲप वाढले की render() आणि diffing तुम्हीच लिहावे लागते</li><li data-en="framework: build steps, bundle weight, version churn, hiring by framework">framework: build पायऱ्या, bundle चे वजन, आवृत्त्यांची घुसळण, framework नुसार भरती</li></ul></div>
-<div class="q use"><h4 data-en="👍 Use when">👍 वापरा जेव्हा</h4><ul><li data-en="vanilla for small surfaces, embeds, this course">छोटे पृष्ठभाग, embeds, हा कोर्स — साधे JS</li><li data-en="a framework once three components share state and a team shares the code">तीन components state वाटून घेतात आणि टीम कोड वाटून घेते तेव्हा framework</li></ul></div>
-<div class="q avoid"><h4 data-en="👎 Think twice when">👎 दोनदा विचार करा जेव्हा</h4><ul><li data-en="a framework for a single form">एकाच form साठी framework</li><li data-en="vanilla for a 200-screen product">200 screens च्या उत्पादनासाठी साधे JS</li></ul></div>
-</div>
+  <h2>🍦 Vanilla JS vs a framework — lessons 05, 07</h2>
+  <div class="hist"><b>⏮️ Before frameworks (jQuery era, ~2010)</b><p>Pages were edited by hand: find the element, change its text, remember to update the three other places that show the same number. State lived in the DOM and nowhere else — and drifted.</p></div>
+  <div class="quad">
+    <div class="q merit"><h4>✅ Merits</h4><ul><li>vanilla: zero build, zero bytes, nothing to upgrade; fine for boards and widgets</li><li>framework: state → view for free, components, an ecosystem of parts</li></ul></div>
+    <div class="q demerit"><h4>❌ Demerits</h4><ul><li>vanilla: you write render() and diffing yourself as the app grows</li><li>framework: build steps, bundle weight, version churn, hiring by framework</li></ul></div>
+    <div class="q use"><h4>👍 Use when</h4><ul><li>vanilla for small surfaces, embeds, this course</li><li>a framework once three components share state and a team shares the code</li></ul></div>
+    <div class="q avoid"><h4>👎 Think twice when</h4><ul><li>a framework for a single form</li><li>vanilla for a 200-screen product</li></ul></div>
+  </div>
 </section>
 <section class="term" id="css" style="--c:#db2777">
-<h2 data-en="🎨 Utility classes vs tokens + components — lessons 03, 08">🎨 Utility classes विरुद्ध tokens + components — धडे 03, 08</h2>
-<div class="hist"><b data-en="⏮️ Before design tokens">⏮️ Design tokens आधी</b><p data-en="Every page had its own blue, its own 13px, its own margin. Dark mode meant a second stylesheet nobody kept in sync.">प्रत्येक पानाचा स्वतःचा निळा, स्वतःचा 13px, स्वतःचा margin. Dark mode म्हणजे दुसरे stylesheet जे कोणीच जुळवून ठेवत नव्हते.</p></div>
-<div class="quad">
-<div class="q merit"><h4 data-en="✅ Merits">✅ फायदे</h4><ul><li data-en="tokens: change --accent once, everything follows; dark mode is a swap">tokens: --accent एकदा बदला, सगळे मागोमाग येते; dark mode म्हणजे अदलाबदल</li><li data-en="utility classes (Tailwind): fast to write, hard to drift, no naming debates">utility classes (Tailwind): लिहायला वेगवान, भरकटणे कठीण, नावांचे वाद नाहीत</li></ul></div>
-<div class="q demerit"><h4 data-en="❌ Demerits">❌ तोटे</h4><ul><li data-en="tokens alone still need components to avoid repetition">नुसत्या tokens ना पुनरावृत्ती टाळायला components लागतातच</li><li data-en="utility HTML gets long; the system lives in config, not in the CSS you read">utility HTML लांब होते; प्रणाली config मध्ये राहते, तुम्ही वाचता त्या CSS मध्ये नाही</li></ul></div>
-<div class="q use"><h4 data-en="👍 Use when">👍 वापरा जेव्हा</h4><ul><li data-en="tokens under any approach — they are the uniform">कोणत्याही पद्धतीखाली tokens — तोच गणवेश</li><li data-en="utilities for teams that ship many screens quickly">पटकन अनेक screens पाठवणाऱ्या टीम्ससाठी utilities</li></ul></div>
-<div class="q avoid"><h4 data-en="👎 Think twice when">👎 दोनदा विचार करा जेव्हा</h4><ul><li data-en="hard-coded colours anywhere">कुठेही थेट लिहिलेले रंग</li><li data-en="a second stylesheet for dark mode">dark mode साठी दुसरे stylesheet</li></ul></div>
-</div>
+  <h2>🎨 Utility classes vs tokens + components — lessons 03, 08</h2>
+  <div class="hist"><b>⏮️ Before design tokens</b><p>Every page had its own blue, its own 13px, its own margin. Dark mode meant a second stylesheet nobody kept in sync.</p></div>
+  <div class="quad">
+    <div class="q merit"><h4>✅ Merits</h4><ul><li>tokens: change --accent once, everything follows; dark mode is a swap</li><li>utility classes (Tailwind): fast to write, hard to drift, no naming debates</li></ul></div>
+    <div class="q demerit"><h4>❌ Demerits</h4><ul><li>tokens alone still need components to avoid repetition</li><li>utility HTML gets long; the system lives in config, not in the CSS you read</li></ul></div>
+    <div class="q use"><h4>👍 Use when</h4><ul><li>tokens under any approach — they are the uniform</li><li>utilities for teams that ship many screens quickly</li></ul></div>
+    <div class="q avoid"><h4>👎 Think twice when</h4><ul><li>hard-coded colours anywhere</li><li>a second stylesheet for dark mode</li></ul></div>
+  </div>
 </section>
 <section class="term" id="spa" style="--c:#4f46e5">
-<h2 data-en="🧭 Single-page app vs server-rendered pages — lessons 04, 12">🧭 Single-page ॲप विरुद्ध server-rendered पाने — धडे 04, 12</h2>
-<div class="hist"><b data-en="⏮️ Before SPAs (~2012)">⏮️ SPA आधी (~2012)</b><p data-en="Every click reloaded the page from the server; forms lost their state; apps felt like documents. Then SPAs moved everything into the browser — and the first paint got slow and empty.">प्रत्येक क्लिकला पान server वरून पुन्हा यायचे; forms चे state जायचे; ॲप्स कागदपत्रांसारखी वाटायची. मग SPA नी सगळे ब्राउझरमध्ये हलवले — आणि पहिले रंगणे हळू आणि रिकामे झाले.</p></div>
-<div class="quad">
-<div class="q merit"><h4 data-en="✅ Merits">✅ फायदे</h4><ul><li data-en="SPA: app-like interactions, one shell, state kept between views">SPA: ॲपसारखा संवाद, एकच कवच, दृश्यांमध्ये state टिकते</li><li data-en="server-rendered / hybrid: fast first paint, works before JS, simpler caching, better for content">server-rendered / संमिश्र: पहिले रंगणे वेगवान, JS आधीही चालते, सोपे caching, मजकुरासाठी उत्तम</li></ul></div>
-<div class="q demerit"><h4 data-en="❌ Demerits">❌ तोटे</h4><ul><li data-en="SPA: big bundles, slow first paint, SEO and a11y need care">SPA: मोठे bundles, हळू पहिले रंगणे, SEO आणि a11y ला काळजी लागते</li><li data-en="server-rendered: full reloads unless enhanced; more server work">server-rendered: सुधारणा केल्याशिवाय पूर्ण reload; server वर जास्त काम</li></ul></div>
-<div class="q use"><h4 data-en="👍 Use when">👍 वापरा जेव्हा</h4><ul><li data-en="SPA for tools people live in (dashboards, editors)">लोक ज्यात दिवसभर असतात त्या साधनांसाठी SPA (dashboards, editors)</li><li data-en="server-rendered or hybrid for content, forms, anything public">मजकूर, forms, सार्वजनिक काहीही — server-rendered किंवा संमिश्र</li></ul></div>
-<div class="q avoid"><h4 data-en="👎 Think twice when">👎 दोनदा विचार करा जेव्हा</h4><ul><li data-en="an SPA for a blog">ब्लॉगसाठी SPA</li><li data-en="a full reload for every keystroke">प्रत्येक कळेसाठी पूर्ण reload</li></ul></div>
-</div>
+  <h2>🧭 Single-page app vs server-rendered pages — lessons 04, 12</h2>
+  <div class="hist"><b>⏮️ Before SPAs (~2012)</b><p>Every click reloaded the page from the server; forms lost their state; apps felt like documents. Then SPAs moved everything into the browser — and the first paint got slow and empty.</p></div>
+  <div class="quad">
+    <div class="q merit"><h4>✅ Merits</h4><ul><li>SPA: app-like interactions, one shell, state kept between views</li><li>server-rendered / hybrid: fast first paint, works before JS, simpler caching, better for content</li></ul></div>
+    <div class="q demerit"><h4>❌ Demerits</h4><ul><li>SPA: big bundles, slow first paint, SEO and a11y need care</li><li>server-rendered: full reloads unless enhanced; more server work</li></ul></div>
+    <div class="q use"><h4>👍 Use when</h4><ul><li>SPA for tools people live in (dashboards, editors)</li><li>server-rendered or hybrid for content, forms, anything public</li></ul></div>
+    <div class="q avoid"><h4>👎 Think twice when</h4><ul><li>an SPA for a blog</li><li>a full reload for every keystroke</li></ul></div>
+  </div>
 </section>
 <section class="term" id="a11y" style="--c:#db2777">
-<h2 data-en="♿ Accessibility — lesson 06">♿ सुलभता — धडा 06</h2>
-<div class="hist"><b data-en="⏮️ Before accessibility was a checklist">⏮️ सुलभता चेकलिस्ट होण्याआधी</b><p data-en="Boards were built for one kind of reader: mouse, sighted, fast connection. Everyone else worked around them — or could not use them at all.">फलक एकाच प्रकारच्या वाचकासाठी बांधले जायचे: माउस, दृष्टी, वेगवान जोडणी. बाकी सगळे वळसे घालायचे — किंवा वापरूच शकायचे नाहीत.</p></div>
-<div class="quad">
-<div class="q merit"><h4 data-en="✅ Merits">✅ फायदे</h4><ul><li data-en="semantic HTML gives keyboard, focus and announcements for free">semantic HTML keyboard, focus आणि घोषणा फुकट देते</li><li data-en="the same semantics power tests and search">तेच semantics चाचण्या आणि शोधालाही चालवतात</li><li data-en="legal requirement in many places; the right thing everywhere">अनेक ठिकाणी कायदेशीर बंधन; सगळीकडे योग्य गोष्ट</li></ul></div>
-<div class="q demerit"><h4 data-en="❌ Demerits">❌ तोटे</h4><ul><li data-en="retrofitting is expensive; ARIA misused makes things worse">नंतर बसवणे महाग; चुकीचे ARIA गोष्टी बिघडवते</li><li data-en="needs testing with real assistive tech, not just a linter">नुसत्या linter नव्हे, खऱ्या सहाय्यक तंत्रज्ञानाने चाचणी लागते</li></ul></div>
-<div class="q use"><h4 data-en="👍 Use when">👍 वापरा जेव्हा</h4><ul><li data-en="always — it is HTML done right">नेहमी — ते नीट केलेले HTML आहे</li><li data-en="every form, every custom widget">प्रत्येक form, प्रत्येक स्वतः बनवलेले widget</li></ul></div>
-<div class="q avoid"><h4 data-en="👎 Think twice when">👎 दोनदा विचार करा जेव्हा</h4><ul><li data-en="ARIA on top of a &amp;lt;div&amp;gt; instead of using &amp;lt;button&amp;gt;">&lt;button&gt; वापरण्याऐवजी &lt;div&gt; वर ARIA लावणे</li><li data-en="a11y as a final sprint task">a11y शेवटच्या sprint चे काम म्हणून</li></ul></div>
-</div>
+  <h2>♿ Accessibility — lesson 06</h2>
+  <div class="hist"><b>⏮️ Before accessibility was a checklist</b><p>Boards were built for one kind of reader: mouse, sighted, fast connection. Everyone else worked around them — or could not use them at all.</p></div>
+  <div class="quad">
+    <div class="q merit"><h4>✅ Merits</h4><ul><li>semantic HTML gives keyboard, focus and announcements for free</li><li>the same semantics power tests and search</li><li>legal requirement in many places; the right thing everywhere</li></ul></div>
+    <div class="q demerit"><h4>❌ Demerits</h4><ul><li>retrofitting is expensive; ARIA misused makes things worse</li><li>needs testing with real assistive tech, not just a linter</li></ul></div>
+    <div class="q use"><h4>👍 Use when</h4><ul><li>always — it is HTML done right</li><li>every form, every custom widget</li></ul></div>
+    <div class="q avoid"><h4>👎 Think twice when</h4><ul><li>ARIA on top of a &lt;div&gt; instead of using &lt;button&gt;</li><li>a11y as a final sprint task</li></ul></div>
+  </div>
 </section>
 <section class="term" id="e2e" style="--c:#4f46e5">
-<h2 data-en="🧪 End-to-end tests — lesson 10">🧪 End-to-end चाचण्या — धडा 10</h2>
-<div class="hist"><b data-en="⏮️ Before browser automation">⏮️ ब्राउझर automation आधी</b><p data-en="Someone clicked through the app before every release and missed the one path that mattered.">प्रत्येक release आधी कोणीतरी ॲपमधून क्लिक करत जायचे आणि नेमका महत्त्वाचा मार्ग चुकायचा.</p></div>
-<div class="quad">
-<div class="q merit"><h4 data-en="✅ Merits">✅ फायदे</h4><ul><li data-en="a real browser, real user paths — the highest confidence per test">खरा ब्राउझर, खरे वापरकर्ता-मार्ग — प्रत्येक चाचणीमागे सर्वाधिक विश्वास</li><li data-en="catch integration bugs unit tests cannot">unit चाचण्या न पकडणारे integration bugs पकडतात</li></ul></div>
-<div class="q demerit"><h4 data-en="❌ Demerits">❌ तोटे</h4><ul><li data-en="slow, flaky if written against class names, need a running stack">हळू, class नावांवर लिहिल्यास अस्थिर, चालू stack लागते</li><li data-en="expensive to maintain in bulk">मोठ्या संख्येने सांभाळायला महाग</li></ul></div>
-<div class="q use"><h4 data-en="👍 Use when">👍 वापरा जेव्हा</h4><ul><li data-en="a handful of golden paths (enrol a student) in CI">CI मध्ये मोजके सोनेरी मार्ग (विद्यार्थी नोंदवा)</li><li data-en="smoke checks on every deploy">प्रत्येक deploy वर smoke तपासण्या</li></ul></div>
-<div class="q avoid"><h4 data-en="👎 Think twice when">👎 दोनदा विचार करा जेव्हा</h4><ul><li data-en="hundreds of e2e tests as the only tests">फक्त शेकडो e2e चाचण्याच असणे</li><li data-en="asserting on CSS classes instead of roles and labels">roles आणि labels ऐवजी CSS classes तपासणे</li></ul></div>
-</div>
+  <h2>🧪 End-to-end tests — lesson 10</h2>
+  <div class="hist"><b>⏮️ Before browser automation</b><p>Someone clicked through the app before every release and missed the one path that mattered.</p></div>
+  <div class="quad">
+    <div class="q merit"><h4>✅ Merits</h4><ul><li>a real browser, real user paths — the highest confidence per test</li><li>catch integration bugs unit tests cannot</li></ul></div>
+    <div class="q demerit"><h4>❌ Demerits</h4><ul><li>slow, flaky if written against class names, need a running stack</li><li>expensive to maintain in bulk</li></ul></div>
+    <div class="q use"><h4>👍 Use when</h4><ul><li>a handful of golden paths (enrol a student) in CI</li><li>smoke checks on every deploy</li></ul></div>
+    <div class="q avoid"><h4>👎 Think twice when</h4><ul><li>hundreds of e2e tests as the only tests</li><li>asserting on CSS classes instead of roles and labels</li></ul></div>
+  </div>
 </section>
 <section class="term" id="static" style="--c:#4f46e5">
-<h2 data-en="🚚 Static hosting vs a server for the front end — lesson 12">🚚 Front end साठी static hosting विरुद्ध server — धडा 12</h2>
-<div class="hist"><b data-en="⏮️ Before static hosting + CDNs">⏮️ Static hosting + CDN आधी</b><p data-en="Front ends were served by the same application server as the API — every page view hit it, every deploy restarted it.">Front ends API च्याच application server वरून दिली जायची — प्रत्येक पान-दर्शन त्यावर आदळायचे, प्रत्येक deploy त्याला restart करायचा.</p></div>
-<div class="quad">
-<div class="q merit"><h4 data-en="✅ Merits">✅ फायदे</h4><ul><li data-en="files on a CDN: cheap, fast everywhere, nothing to patch">CDN वरच्या फाइल्स: स्वस्त, सगळीकडे वेगवान, patch करायला काही नाही</li><li data-en="cache-busting by hash makes deploys atomic and rollbacks trivial">hash ने cache-busting मुळे deploys अखंड आणि rollbacks क्षुल्लक होतात</li></ul></div>
-<div class="q demerit"><h4 data-en="❌ Demerits">❌ तोटे</h4><ul><li data-en="dynamic per-user HTML needs a server or edge functions">प्रत्येक वापरकर्त्यासाठी बदलणाऱ्या HTML ला server किंवा edge functions लागतात</li><li data-en="routing for SPAs needs a fallback rule">SPA च्या routing ला fallback नियम लागतो</li></ul></div>
-<div class="q use"><h4 data-en="👍 Use when">👍 वापरा जेव्हा</h4><ul><li data-en="any board that is mostly the same for everyone — this whole School">सगळ्यांसाठी बहुतांश सारखाच असलेला कोणताही फलक — ही अख्खी शाळा</li><li data-en="dashboards that fetch their data from an API">API मधून data आणणारी dashboards</li></ul></div>
-<div class="q avoid"><h4 data-en="👎 Think twice when">👎 दोनदा विचार करा जेव्हा</h4><ul><li data-en="personalised HTML on every request">प्रत्येक विनंतीला वैयक्तिक HTML</li><li data-en="secrets baked into static files">static फाइल्समध्ये भाजलेली गुपिते</li></ul></div>
-</div>
+  <h2>🚚 Static hosting vs a server for the front end — lesson 12</h2>
+  <div class="hist"><b>⏮️ Before static hosting + CDNs</b><p>Front ends were served by the same application server as the API — every page view hit it, every deploy restarted it.</p></div>
+  <div class="quad">
+    <div class="q merit"><h4>✅ Merits</h4><ul><li>files on a CDN: cheap, fast everywhere, nothing to patch</li><li>cache-busting by hash makes deploys atomic and rollbacks trivial</li></ul></div>
+    <div class="q demerit"><h4>❌ Demerits</h4><ul><li>dynamic per-user HTML needs a server or edge functions</li><li>routing for SPAs needs a fallback rule</li></ul></div>
+    <div class="q use"><h4>👍 Use when</h4><ul><li>any board that is mostly the same for everyone — this whole School</li><li>dashboards that fetch their data from an API</li></ul></div>
+    <div class="q avoid"><h4>👎 Think twice when</h4><ul><li>personalised HTML on every request</li><li>secrets baked into static files</li></ul></div>
+  </div>
 </section>
 <section class="term" id="ds" style="--c:#4f46e5">
-<h2 data-en="🎽 A design system — lesson 08">🎽 Design system — धडा 08</h2>
-<div class="hist"><b data-en="⏮️ Before design systems">⏮️ Design systems आधी</b><p data-en="Each team drew its own buttons; the product looked like five products; every new screen re-decided spacing.">प्रत्येक टीम स्वतःची buttons काढायची; उत्पादन पाच उत्पादनांसारखे दिसायचे; प्रत्येक नवी screen अंतर पुन्हा ठरवायची.</p></div>
-<div class="quad">
-<div class="q merit"><h4 data-en="✅ Merits">✅ फायदे</h4><ul><li data-en="consistency without meetings; tokens + components + rules">बैठकांशिवाय सुसंगती; tokens + components + नियम</li><li data-en="faster screens, fewer a11y regressions">वेगवान screens, कमी a11y घसरणी</li><li data-en="designers and developers share one vocabulary">डिझायनर आणि डेव्हलपर एकच शब्दसंग्रह वापरतात</li></ul></div>
-<div class="q demerit"><h4 data-en="❌ Demerits">❌ तोटे</h4><ul><li data-en="a system needs an owner and a release process">प्रणालीला मालक आणि release प्रक्रिया लागते</li><li data-en="over-engineering for a single small app">एकाच छोट्या ॲपसाठी अतिरेकी रचना</li></ul></div>
-<div class="q use"><h4 data-en="👍 Use when">👍 वापरा जेव्हा</h4><ul><li data-en="several teams or many screens">अनेक टीम्स किंवा अनेक screens</li><li data-en="brand consistency matters">ब्रँडची सुसंगती महत्त्वाची</li></ul></div>
-<div class="q avoid"><h4 data-en="👎 Think twice when">👎 दोनदा विचार करा जेव्हा</h4><ul><li data-en="a five-page site — tokens are enough">पाच पानांची साइट — tokens पुरेसे</li><li data-en="adopting a huge external system for two buttons">दोन buttons साठी प्रचंड बाहेरची प्रणाली स्वीकारणे</li></ul></div>
-</div>
+  <h2>🎽 A design system — lesson 08</h2>
+  <div class="hist"><b>⏮️ Before design systems</b><p>Each team drew its own buttons; the product looked like five products; every new screen re-decided spacing.</p></div>
+  <div class="quad">
+    <div class="q merit"><h4>✅ Merits</h4><ul><li>consistency without meetings; tokens + components + rules</li><li>faster screens, fewer a11y regressions</li><li>designers and developers share one vocabulary</li></ul></div>
+    <div class="q demerit"><h4>❌ Demerits</h4><ul><li>a system needs an owner and a release process</li><li>over-engineering for a single small app</li></ul></div>
+    <div class="q use"><h4>👍 Use when</h4><ul><li>several teams or many screens</li><li>brand consistency matters</li></ul></div>
+    <div class="q avoid"><h4>👎 Think twice when</h4><ul><li>a five-page site — tokens are enough</li><li>adopting a huge external system for two buttons</li></ul></div>
+  </div>
 </section>
-<footer data-en='
-  Learn UI School · the board is in the repo · &lt;a href="index.html"&gt;Course home&lt;/a&gt; · &lt;a href="lesson-diagrams.html"&gt;Lesson diagrams&lt;/a&gt; · &lt;a href="https://github.com/BaluRaut/learn-ui-school"&gt;GitHub&lt;/a&gt; · &lt;a href="https://baluraut.github.io/school/dictionary.html"&gt;📖 the Dictionary&lt;/a&gt; · &lt;a href="https://baluraut.github.io/school/"&gt;🏫 all schools&lt;/a&gt; · &lt;a href="https://github.com/BaluRaut/learn-ui-school/issues"&gt;🐛 found a mistake?&lt;/a&gt;
-'>Learn UI School · फलक रेपोच्या आत आहे · <a href="index.html">कोर्स मुख्य पान</a> · <a href="lesson-diagrams.html">धड्यांच्या आकृत्या</a> · <a href="https://github.com/BaluRaut/learn-ui-school">GitHub</a> · <a href="https://baluraut.github.io/school/dictionary.html">📖 शब्दकोश</a> · <a href="https://baluraut.github.io/school/">🏫 सर्व शाळा</a> · <a href="https://github.com/BaluRaut/learn-ui-school/issues">🐛 चूक सापडली?</a></footer>
+<footer>
+  Learn UI School · the board is in the repo · <a href="index.html">Course home</a> · <a href="lesson-diagrams.html">Lesson diagrams</a> · <a href="https://github.com/BaluRaut/learn-ui-school">GitHub</a> · <a href="https://baluraut.github.io/school/dictionary.html">📖 the Dictionary</a> · <a href="https://baluraut.github.io/school/">🏫 all schools</a> · <a href="https://github.com/BaluRaut/learn-ui-school/issues">🐛 found a mistake?</a>
+</footer>
 </div>
-
-<script id="i18n-js">
-function schoolSetLang(l){
-  try{localStorage.setItem('school-lang',l)}catch(e){}
-  document.documentElement.setAttribute('lang',l);
-  document.querySelectorAll('[data-en]').forEach(function(el){
-    if(!el.hasAttribute('data-mr')) el.setAttribute('data-mr', el.innerHTML);
-    el.innerHTML = (l==='en') ? el.getAttribute('data-en') : el.getAttribute('data-mr');
-  });
-  document.querySelectorAll('[data-en-ph]').forEach(function(el){
-    if(!el.hasAttribute('data-mr-ph')) el.setAttribute('data-mr-ph', el.getAttribute('placeholder'));
-    el.setAttribute('placeholder', (l==='en') ? el.getAttribute('data-en-ph') : el.getAttribute('data-mr-ph'));
-  });
-  var p=document.getElementById('lang-pick'); if(p) p.value=l;
-}
-(function(){ var l='mr'; try{ l=localStorage.getItem('school-lang')||'mr'; }catch(e){}
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',function(){schoolSetLang(l)}); else schoolSetLang(l); })();
-</script></body>
+</body>
 </html>

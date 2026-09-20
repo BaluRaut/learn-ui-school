@@ -44,7 +44,7 @@
 
   <rect class="tip" x="70" y="400" width="880" height="110" rx="14"/>
   <text class="t m" x="510" y="438">🔬 ui/index.html + ui/styles.css + ui/app.js — three files, no framework, no build</text>
-  <text class="s m" x="510" y="466">80 lines of semantic HTML · 60 lines of tokens and layout · 100 lines of state → render, events and fetch</text>
+  <text class="s m" x="510" y="466">~80 lines of semantic HTML · about fifty of tokens and layout · under a hundred of state → render, events and fetch</text>
   <text class="s m" x="510" y="490">python3 ui/mock_api.py serves the board and its counter; ?slow=1 and ?fail=1 show the loading and error faces</text>
 
   <rect class="warn" x="990" y="400" width="860" height="110" rx="14"/>

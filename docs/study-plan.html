@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-
-<html lang="mr">
+<html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title data-en="Study plan — Learn UI School">अभ्यास योजना — Learn UI School</title>
-<meta content="A 4-week study plan for the 12-lesson UI course: sequence, time estimates, weekly milestones — progress saved in your browser." name="description"/>
-<meta content="Study plan — Learn UI School" property="og:title"/>
-<meta content="A 4-week study plan for the 12-lesson UI course: sequence, time estimates, weekly milestones — progress saved in your browser." property="og:description"/>
-<meta content="https://baluraut.github.io/learn-ui-school/images/big-picture-4k.png" property="og:image"/>
-<meta content="website" property="og:type"/>
-<meta content="summary_large_image" name="twitter:card"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Study plan — Learn UI School</title>
+<meta name="description" content="A 4-week study plan for the 12-lesson UI course: sequence, time estimates, weekly milestones — progress saved in your browser.">
+<meta property="og:title" content="Study plan — Learn UI School">
+<meta property="og:description" content="A 4-week study plan for the 12-lesson UI course: sequence, time estimates, weekly milestones — progress saved in your browser.">
+<meta property="og:image" content="https://baluraut.github.io/learn-ui-school/images/big-picture-4k.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <style>
   :root { --bg:#f8fafc; --card:#fff; --ink:#0f172a; --muted:#475569; --line:#e2e8f0; --accent:#db2777; --ok:#16a34a; --blue:#2563eb; --bad:#dc2626; }
   @media (prefers-color-scheme: dark) { :root { --bg:#0b1220; --card:#131c2e; --ink:#e2e8f0; --muted:#94a3b8; --line:#253349; } }
@@ -59,62 +58,56 @@
   .milestone b { color:var(--ok); }
   #done { display:none; text-align:center; background:var(--card); border:2px solid var(--ok); border-radius:20px; padding:32px 24px; margin-top:26px; }
 </style>
+</head>
+<body>
 
-<style id="i18n-css">
-#lang-pick{position:fixed;top:10px;right:10px;z-index:9999;font:600 .85rem -apple-system,"Segoe UI",Helvetica,Arial,sans-serif;background:var(--card,#fff);color:var(--ink,#0f172a);border:1px solid var(--line,#e2e8f0);border-radius:999px;padding:6px 12px;box-shadow:0 2px 10px rgba(0,0,0,.08);cursor:pointer}
-html[lang="mr"] body{font-family:"Noto Sans Devanagari","Mukta","Devanagari Sangam MN","Nirmala UI",-apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
-html[lang="mr"] svg text{font-family:"Noto Sans Devanagari","Mukta","Devanagari Sangam MN","Nirmala UI",sans-serif}
-@media print{#lang-pick{display:none}}
-</style></head>
-<body><select aria-label="Language / भाषा" id="lang-pick" onchange="schoolSetLang(this.value)">
-<option value="mr">🇮🇳 मराठी</option><option value="en">🇬🇧 English</option></select>
 <div class="wrap">
 <header>
-<p data-en='&lt;a href="index.html"&gt;← Back to the course home&lt;/a&gt;'><a href="index.html">← कोर्सच्या मुख्य पानाकडे परत</a></p>
-<h1 data-en="🗓️ The study plan — 12 lessons, 4 weeks">🗓️ अभ्यास योजना — 12 धडे, 4 आठवडे</h1>
-<p class="sub" data-en="~&lt;b&gt;3 sessions a week&lt;/b&gt;: read the lesson (~15 min) + change the board and run the smoke test (~25 min). Tick lessons off — &lt;b&gt;progress is saved in this browser&lt;/b&gt;.">~<b>आठवड्याला 3 सत्रे</b>: धडा वाचा (~15 मिनिटे) + फलक बदला आणि smoke test चालवा (~25 मिनिटे). धडे टिक करा — <b>प्रगती या ब्राउझरमध्ये जपली जाते</b>.</p>
-<div class="paces"><div class="pace" data-en="🐢 &lt;b&gt;Steady:&lt;/b&gt; 3 sessions/week → done in 4 weeks.">🐢 <b>स्थिर:</b> आठवड्याला 3 सत्रे → 4 आठवड्यांत पूर्ण.</div><div class="pace" data-en="🐇 &lt;b&gt;Fast track:&lt;/b&gt; one weekend per part → done in 2 weekends.">🐇 <b>वेगवान मार्ग:</b> प्रत्येक भागाला एक शनिवार-रविवार → 2 शनिवार-रविवारांत पूर्ण.</div><div class="pace" data-en="💰 &lt;b&gt;Cost:&lt;/b&gt; zero. A browser and Python 3 on your laptop.">💰 <b>खर्च:</b> शून्य. तुमच्या लॅपटॉपवर ब्राउझर आणि Python 3.</div></div>
+  <p><a href="index.html">← Back to the course home</a></p>
+  <h1>🗓️ The study plan — 12 lessons, 4 weeks</h1>
+  <p class="sub">~<b>3 sessions a week</b>: read the lesson (~15 min) + change the board and run the smoke test (~25 min). Tick lessons off — <b>progress is saved in this browser</b>.</p>
+  <div class="paces"><div class="pace">🐢 <b>Steady:</b> 3 sessions/week → done in 4 weeks.</div><div class="pace">🐇 <b>Fast track:</b> one weekend per part → done in 2 weekends.</div><div class="pace">💰 <b>Cost:</b> zero. A browser and Python 3 on your laptop.</div></div>
 </header>
 <div class="progress-box"><div class="progress-inner"><span id="ptext">0 / 12</span><div class="bar"><div id="pbar"></div></div></div></div>
 <section class="week" style="--c:#db2777">
-<h2 data-en='&lt;span class="wk"&gt;WEEK 1&lt;/span&gt; 🧱 The board — structure and looks'><span class="wk">आठवडा 1</span> 🧱 फलक — रचना आणि दिसणे</h2>
-<p class="goal" data-en="Why UI, HTML with meaning, CSS layout. Lab: open the board, change the skeleton, make it two columns then one.">UI का, अर्थ असलेले HTML, CSS मांडणी. लॅब: फलक उघडा, सांगाडा बदला, दोन स्तंभ मग एक करा.</p>
-<div class="lesson-row"><input data-l="l01" id="sl01" type="checkbox"/><label data-en='&lt;a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-01-why-ui/lessons/01-why-ui/README.md"&gt;01 · 📌 Why UI&lt;/a&gt;' for="sl01"><a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-01-why-ui/lessons/01-why-ui/README.md">01 · 📌 UI का</a></label><span class="time" data-en="~30 min">~30 मि.</span></div>
-<div class="lesson-row"><input data-l="l02" id="sl02" type="checkbox"/><label data-en='&lt;a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-02-html-structure/lessons/02-html-structure/README.md"&gt;02 · 🧱 HTML structure&lt;/a&gt;' for="sl02"><a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-02-html-structure/lessons/02-html-structure/README.md">02 · 🧱 HTML ची रचना</a></label><span class="time" data-en="~40 min">~40 मि.</span></div>
-<div class="lesson-row"><input data-l="l03" id="sl03" type="checkbox"/><label for="sl03"><a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-03-css-layout/lessons/03-css-layout/README.md">03 · 🎨 CSS layout</a></label><span class="time" data-en="~45 min">~45 मि.</span></div>
-<div class="milestone" data-en="🏁 &lt;b&gt;Checkpoint:&lt;/b&gt; you can name every landmark on the board, the smoke test still passes after your HTML change, and the board looks right at 400px and 1200px.">🏁 <b>टप्पा:</b> फलकावरची प्रत्येक खूण तुम्ही नावाने सांगू शकता, तुमच्या HTML बदलानंतरही smoke test पास होते, आणि फलक 400px आणि 1200px वर नीट दिसतो.</div>
+  <h2><span class="wk">WEEK 1</span> 🧱 The board — structure and looks</h2>
+  <p class="goal">Why UI, HTML with meaning, CSS layout. Lab: open the board, change the skeleton, make it two columns then one.</p>
+  <div class="lesson-row"><input type="checkbox" data-l="l01" id="sl01"><label for="sl01"><a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-01-why-ui/lessons/01-why-ui/README.md">01 · 📌 Why UI</a></label><span class="time">~30 min</span></div>
+  <div class="lesson-row"><input type="checkbox" data-l="l02" id="sl02"><label for="sl02"><a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-02-html-structure/lessons/02-html-structure/README.md">02 · 🧱 HTML structure</a></label><span class="time">~40 min</span></div>
+  <div class="lesson-row"><input type="checkbox" data-l="l03" id="sl03"><label for="sl03"><a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-03-css-layout/lessons/03-css-layout/README.md">03 · 🎨 CSS layout</a></label><span class="time">~45 min</span></div>
+  <div class="milestone">🏁 <b>Checkpoint:</b> you can name every landmark on the board, the smoke test still passes after your HTML change, and the board looks right at 400px and 1200px.</div>
 </section>
 <section class="week" style="--c:#db2777">
-<h2 data-en='&lt;span class="wk"&gt;WEEK 2&lt;/span&gt; ⚡ Alive and readable — events, state, a11y'><span class="wk">आठवडा 2</span> ⚡ जिवंत आणि वाचनीय — events, state, a11y</h2>
-<p class="goal" data-en="JavaScript events, state → render, accessibility. Lab: add a filter; break the render rule and fix it; use the board with keyboard only.">JavaScript events, state → render, सुलभता. लॅब: एक filter जोडा; render चा नियम मोडा आणि दुरुस्त करा; फक्त keyboard ने फलक वापरा.</p>
-<div class="lesson-row"><input data-l="l04" id="sl04" type="checkbox"/><label for="sl04"><a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-04-javascript-events/lessons/04-javascript-events/README.md">04 · ⚡ JavaScript &amp; events</a></label><span class="time" data-en="~45 min">~45 मि.</span></div>
-<div class="lesson-row"><input data-l="l05" id="sl05" type="checkbox"/><label for="sl05"><a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-05-state-components/lessons/05-state-components/README.md">05 · 🧠 State &amp; components</a></label><span class="time" data-en="~45 min">~45 मि.</span></div>
-<div class="lesson-row"><input data-l="l06" id="sl06" type="checkbox"/><label data-en='&lt;a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-06-accessibility/lessons/06-accessibility/README.md"&gt;06 · ♿ Accessibility&lt;/a&gt;' for="sl06"><a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-06-accessibility/lessons/06-accessibility/README.md">06 · ♿ सुलभता</a></label><span class="time" data-en="~40 min">~40 मि.</span></div>
-<div class="milestone" data-en="🏁 &lt;b&gt;Checkpoint:&lt;/b&gt; your new control changes state and the board repaints; you enrolled a student without touching the mouse; the screen-reader announcement fires.">🏁 <b>टप्पा:</b> तुमचे नवे नियंत्रण state बदलते आणि फलक पुन्हा रंगतो; माउसला हात न लावता तुम्ही विद्यार्थी नोंदवला; screen-reader ची घोषणा होते.</div>
+  <h2><span class="wk">WEEK 2</span> ⚡ Alive and readable — events, state, a11y</h2>
+  <p class="goal">JavaScript events, state → render, accessibility. Lab: add a filter; break the render rule and fix it; use the board with keyboard only.</p>
+  <div class="lesson-row"><input type="checkbox" data-l="l04" id="sl04"><label for="sl04"><a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-04-javascript-events/lessons/04-javascript-events/README.md">04 · ⚡ JavaScript &amp; events</a></label><span class="time">~45 min</span></div>
+  <div class="lesson-row"><input type="checkbox" data-l="l05" id="sl05"><label for="sl05"><a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-05-state-components/lessons/05-state-components/README.md">05 · 🧠 State &amp; components</a></label><span class="time">~45 min</span></div>
+  <div class="lesson-row"><input type="checkbox" data-l="l06" id="sl06"><label for="sl06"><a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-06-accessibility/lessons/06-accessibility/README.md">06 · ♿ Accessibility</a></label><span class="time">~40 min</span></div>
+  <div class="milestone">🏁 <b>Checkpoint:</b> your new control changes state and the board repaints; you enrolled a student without touching the mouse; the screen-reader announcement fires.</div>
 </section>
 <section class="week" style="--c:#4f46e5">
-<h2 data-en='&lt;span class="wk"&gt;WEEK 3&lt;/span&gt; 🎽 Frameworks, the uniform, speed'><span class="wk">आठवडा 3</span> 🎽 Frameworks, गणवेश, वेग</h2>
-<p class="goal" data-en="What frameworks automate, tokens and dark mode, performance. Lab: sketch StudentCard in React; change one token; measure the board in Lighthouse.">Frameworks काय automate करतात, tokens आणि dark mode, कामगिरी. लॅब: React मध्ये StudentCard रेखाटा; एक token बदला; Lighthouse मध्ये फलक मोजा.</p>
-<div class="lesson-row"><input data-l="l07" id="sl07" type="checkbox"/><label for="sl07"><a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-07-frameworks/lessons/07-frameworks/README.md">07 · 🧰 Frameworks</a></label><span class="time" data-en="~40 min">~40 मि.</span></div>
-<div class="lesson-row"><input data-l="l08" id="sl08" type="checkbox"/><label for="sl08"><a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-08-design-tokens/lessons/08-design-tokens/README.md">08 · 🎽 Design systems &amp; tokens</a></label><span class="time" data-en="~35 min">~35 मि.</span></div>
-<div class="lesson-row"><input data-l="l09" id="sl09" type="checkbox"/><label data-en='&lt;a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-09-performance/lessons/09-performance/README.md"&gt;09 · 🚀 Performance&lt;/a&gt;' for="sl09"><a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-09-performance/lessons/09-performance/README.md">09 · 🚀 कामगिरी</a></label><span class="time" data-en="~40 min">~40 मि.</span></div>
-<div class="milestone" data-en="🏁 &lt;b&gt;Checkpoint:&lt;/b&gt; you can explain state → view in framework words and in vanilla words; --accent changed the whole board; you know your LCP number on a throttled phone.">🏁 <b>टप्पा:</b> state → view हे framework च्या शब्दांत आणि साध्या JavaScript च्या शब्दांत तुम्ही समजावू शकता; --accent ने अख्खा फलक बदलला; हळू केलेल्या फोनवरचा तुमचा LCP आकडा तुम्हाला माहीत आहे.</div>
+  <h2><span class="wk">WEEK 3</span> 🎽 Frameworks, the uniform, speed</h2>
+  <p class="goal">What frameworks automate, tokens and dark mode, performance. Lab: sketch StudentCard in React; change one token; measure the board in Lighthouse.</p>
+  <div class="lesson-row"><input type="checkbox" data-l="l07" id="sl07"><label for="sl07"><a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-07-frameworks/lessons/07-frameworks/README.md">07 · 🧰 Frameworks</a></label><span class="time">~40 min</span></div>
+  <div class="lesson-row"><input type="checkbox" data-l="l08" id="sl08"><label for="sl08"><a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-08-design-tokens/lessons/08-design-tokens/README.md">08 · 🎽 Design systems &amp; tokens</a></label><span class="time">~35 min</span></div>
+  <div class="lesson-row"><input type="checkbox" data-l="l09" id="sl09"><label for="sl09"><a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-09-performance/lessons/09-performance/README.md">09 · 🚀 Performance</a></label><span class="time">~40 min</span></div>
+  <div class="milestone">🏁 <b>Checkpoint:</b> you can explain state → view in framework words and in vanilla words; --accent changed the whole board; you know your LCP number on a throttled phone.</div>
 </section>
 <section class="week" style="--c:#4f46e5">
-<h2 data-en='&lt;span class="wk"&gt;WEEK 4&lt;/span&gt; 🧪 Tested, connected, pinned up'><span class="wk">आठवडा 4</span> 🧪 तपासलेला, जोडलेला, भिंतीवर लागलेला</h2>
-<p class="goal" data-en="Testing, talking to backends, deploy. Lab: add a smoke check; make the error and loading states appear; deploy the board to GitHub Pages.">चाचणी, backends शी बोलणे, deploy. लॅब: एक smoke तपासणी जोडा; error आणि loading स्थिती दाखवा; फलक GitHub Pages वर deploy करा.</p>
-<div class="lesson-row"><input data-l="l10" id="sl10" type="checkbox"/><label data-en='&lt;a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-10-testing/lessons/10-testing/README.md"&gt;10 · 🧪 Testing UI&lt;/a&gt;' for="sl10"><a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-10-testing/lessons/10-testing/README.md">10 · 🧪 UI ची चाचणी</a></label><span class="time" data-en="~40 min">~40 मि.</span></div>
-<div class="lesson-row"><input data-l="l11" id="sl11" type="checkbox"/><label data-en='&lt;a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-11-talking-to-backends/lessons/11-talking-to-backends/README.md"&gt;11 · 📨 Talking to backends&lt;/a&gt;' for="sl11"><a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-11-talking-to-backends/lessons/11-talking-to-backends/README.md">11 · 📨 Backends शी बोलणे</a></label><span class="time" data-en="~45 min">~45 मि.</span></div>
-<div class="lesson-row"><input data-l="l12" id="sl12" type="checkbox"/><label data-en='&lt;a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-12-build-deploy-observe/lessons/12-build-deploy-observe/README.md"&gt;12 · 🚚 Build, deploy &amp;amp; observe&lt;/a&gt;' for="sl12"><a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-12-build-deploy-observe/lessons/12-build-deploy-observe/README.md">12 · 🚚 Build, deploy &amp; निरीक्षण</a></label><span class="time" data-en="~40 min">~40 मि.</span></div>
-<div class="milestone" data-en="🏁 &lt;b&gt;Checkpoint:&lt;/b&gt; 🏆 &lt;b&gt;Capstone:&lt;/b&gt; add a homework list to the board — state, component, a11y pass, three smoke checks, loading/error states — and a public URL you can send to a friend.">🏁 <b>टप्पा:</b> 🏆 <b>कळस-प्रकल्प:</b> फलकावर गृहपाठाची यादी जोडा — state, component, a11y तपासणी, तीन smoke तपासण्या, loading/error स्थिती — आणि मित्राला पाठवता येईल अशी सार्वजनिक URL.</div>
+  <h2><span class="wk">WEEK 4</span> 🧪 Tested, connected, pinned up</h2>
+  <p class="goal">Testing, talking to backends, deploy. Lab: add a smoke check; make the error and loading states appear; deploy the board to GitHub Pages.</p>
+  <div class="lesson-row"><input type="checkbox" data-l="l10" id="sl10"><label for="sl10"><a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-10-testing/lessons/10-testing/README.md">10 · 🧪 Testing UI</a></label><span class="time">~40 min</span></div>
+  <div class="lesson-row"><input type="checkbox" data-l="l11" id="sl11"><label for="sl11"><a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-11-talking-to-backends/lessons/11-talking-to-backends/README.md">11 · 📨 Talking to backends</a></label><span class="time">~45 min</span></div>
+  <div class="lesson-row"><input type="checkbox" data-l="l12" id="sl12"><label for="sl12"><a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-12-build-deploy-observe/lessons/12-build-deploy-observe/README.md">12 · 🚚 Build, deploy &amp; observe</a></label><span class="time">~40 min</span></div>
+  <div class="milestone">🏁 <b>Checkpoint:</b> 🏆 <b>Capstone:</b> add a homework list to the board — state, component, a11y pass, three smoke checks, loading/error states — and a public URL you can send to a friend.</div>
 </section>
 <div id="done">
-<h2 data-en="🎓 12 / 12 — the board is yours!">🎓 12 / 12 — फलक तुमचा झाला!</h2>
-<p class="sub" data-en='Next: the &lt;a href="https://baluraut.github.io/learn-api-school/"&gt;API school&lt;/a&gt; is the counter this board talks to, the &lt;a href="https://baluraut.github.io/learn-cicd-school/"&gt;CI/CD school&lt;/a&gt; pins it up on every push, and the &lt;a href="https://baluraut.github.io/school/"&gt;School portal&lt;/a&gt; has the rest.' style="margin:10px auto 0">पुढे: <a href="https://baluraut.github.io/learn-api-school/">API शाळा</a> हेच हा फलक ज्याच्याशी बोलतो ते काउंटर, <a href="https://baluraut.github.io/learn-cicd-school/">CI/CD शाळा</a> प्रत्येक push वर तो भिंतीवर लावते, आणि बाकीचे <a href="https://baluraut.github.io/school/">शाळेच्या पोर्टलवर</a>.</p>
+  <h2>🎓 12 / 12 — the board is yours!</h2>
+  <p class="sub" style="margin:10px auto 0">Next: the <a href="https://baluraut.github.io/learn-api-school/">API school</a> is the counter this board talks to, the <a href="https://baluraut.github.io/learn-cicd-school/">CI/CD school</a> pins it up on every push, and the <a href="https://baluraut.github.io/school/">School portal</a> has the rest.</p>
 </div>
-<footer data-en='
-  Learn UI School · the board is in the repo · &lt;a href="index.html"&gt;Course home&lt;/a&gt; · &lt;a href="lesson-diagrams.html"&gt;Lesson diagrams&lt;/a&gt; · &lt;a href="https://github.com/BaluRaut/learn-ui-school"&gt;GitHub&lt;/a&gt; · &lt;a href="https://baluraut.github.io/school/dictionary.html"&gt;📖 the Dictionary&lt;/a&gt; · &lt;a href="https://baluraut.github.io/school/"&gt;🏫 all schools&lt;/a&gt; · &lt;a href="https://github.com/BaluRaut/learn-ui-school/issues"&gt;🐛 found a mistake?&lt;/a&gt;
-'>Learn UI School · फलक रेपोच्या आत आहे · <a href="index.html">कोर्स मुख्य पान</a> · <a href="lesson-diagrams.html">धड्यांच्या आकृत्या</a> · <a href="https://github.com/BaluRaut/learn-ui-school">GitHub</a> · <a href="https://baluraut.github.io/school/dictionary.html">📖 शब्दकोश</a> · <a href="https://baluraut.github.io/school/">🏫 सर्व शाळा</a> · <a href="https://github.com/BaluRaut/learn-ui-school/issues">🐛 चूक सापडली?</a></footer>
+<footer>
+  Learn UI School · the board is in the repo · <a href="index.html">Course home</a> · <a href="lesson-diagrams.html">Lesson diagrams</a> · <a href="https://github.com/BaluRaut/learn-ui-school">GitHub</a> · <a href="https://baluraut.github.io/school/dictionary.html">📖 the Dictionary</a> · <a href="https://baluraut.github.io/school/">🏫 all schools</a> · <a href="https://github.com/BaluRaut/learn-ui-school/issues">🐛 found a mistake?</a>
+</footer>
 </div>
 <script>
 (function(){
@@ -135,22 +128,5 @@ html[lang="mr"] svg text{font-family:"Noto Sans Devanagari","Mukta","Devanagari 
   render();
 })();
 </script>
-
-<script id="i18n-js">
-function schoolSetLang(l){
-  try{localStorage.setItem('school-lang',l)}catch(e){}
-  document.documentElement.setAttribute('lang',l);
-  document.querySelectorAll('[data-en]').forEach(function(el){
-    if(!el.hasAttribute('data-mr')) el.setAttribute('data-mr', el.innerHTML);
-    el.innerHTML = (l==='en') ? el.getAttribute('data-en') : el.getAttribute('data-mr');
-  });
-  document.querySelectorAll('[data-en-ph]').forEach(function(el){
-    if(!el.hasAttribute('data-mr-ph')) el.setAttribute('data-mr-ph', el.getAttribute('placeholder'));
-    el.setAttribute('placeholder', (l==='en') ? el.getAttribute('data-en-ph') : el.getAttribute('data-mr-ph'));
-  });
-  var p=document.getElementById('lang-pick'); if(p) p.value=l;
-}
-(function(){ var l='mr'; try{ l=localStorage.getItem('school-lang')||'mr'; }catch(e){}
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',function(){schoolSetLang(l)}); else schoolSetLang(l); })();
-</script></body>
+</body>
 </html>
