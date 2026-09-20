@@ -85,7 +85,7 @@ means re-implementing the browser by hand with ARIA, badly.
 
 ## 🔧 How (in this repo)
 
-Read [ui/index.html](../../ui/index.html) top to bottom — it is 80 lines and
+Read [ui/index.html](../../ui/index.html) top to bottom — it is short — under 80 lines — and
 every element was chosen for what it *means*: the skip link, the header with
 one `h1`, three `section`s with their own `h2`, a form where every control
 has a label, a `<template>` for the card, and `alt=""` on decorative avatars.
