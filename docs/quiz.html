@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz — Learn UI School</title>
+<meta name="description" content="Self-test quiz for Learn UI School — 15 questions with explanations.">
+<meta property="og:title" content="Quiz — Learn UI School">
+<meta property="og:description" content="Self-test quiz for Learn UI School — 15 questions with explanations.">
+<meta property="og:image" content="https://baluraut.github.io/learn-ui-school/images/big-picture-4k.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root { --bg:#f8fafc; --card:#fff; --ink:#0f172a; --muted:#475569; --line:#e2e8f0; --accent:#db2777; --ok:#16a34a; --blue:#2563eb; --bad:#dc2626; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0b1220; --card:#131c2e; --ink:#e2e8f0; --muted:#94a3b8; --line:#253349; } }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--ink); font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif; line-height:1.6; }
+  .wrap { max-width:1280px; margin:0 auto; padding:28px 20px 60px; }
+  @media (min-width: 1660px) { .wrap { max-width: 1580px; } }
+  a { color:var(--blue); } h1 { font-size:2rem; line-height:1.25; } h2 { font-size:1.4rem; margin:44px 0 6px; }
+  .sub { color:var(--muted); max-width:74ch; }
+  .chips { display:flex; flex-wrap:wrap; gap:8px; margin:16px 0 8px; }
+  .chip { border:1px solid var(--line); background:var(--card); border-radius:999px; padding:6px 14px; font-size:.85rem; color:var(--muted); }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:14px; margin-top:16px; }
+  .lesson { background:var(--card); border:1px solid var(--line); border-top:5px solid var(--c,var(--accent)); border-radius:14px; padding:16px; display:flex; flex-direction:column; gap:6px; }
+  .lesson .top { display:flex; align-items:center; gap:10px; }
+  .lesson .num { flex:none; width:30px; height:30px; border-radius:50%; background:var(--c,var(--accent)); color:#fff; display:inline-flex; align-items:center; justify-content:center; font-weight:800; font-size:.9rem; }
+  .lesson h3 { font-size:1.02rem; line-height:1.3; } .lesson .ana { color:var(--muted); font-size:.9rem; }
+  .lesson code { font-size:.78rem; background:var(--bg); border:1px solid var(--line); border-radius:6px; padding:1px 6px; }
+  .lesson a.go { margin-top:auto; font-weight:600; font-size:.9rem; text-decoration:none; } .lesson a.go+a.go { margin-top:0; } .lesson a.go:hover { text-decoration:underline; }
+  .callout { background:var(--card); border:1px solid var(--line); border-left:6px solid var(--ok); border-radius:14px; padding:18px 20px; margin-top:16px; }
+  pre { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px; overflow-x:auto; font-size:.88rem; margin-top:12px; }
+  .btn { display:inline-block; background:var(--accent); color:#fff; border-radius:10px; padding:10px 18px; text-decoration:none; font-weight:700; margin:14px 10px 0 0; }
+  .btn.alt { background:transparent; color:var(--ink); border:1px solid var(--line); }
+  .vs { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:14px; margin-top:16px; }
+  .vcol { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px; } .vcol h3 { margin-bottom:8px; }
+  .vcol ul { margin-left:18px; color:var(--muted); font-size:.93rem; }
+  .tbl{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 14px;margin-top:12px} .tbl table{border-collapse:collapse;width:100%;font-size:.9rem} .tbl th,.tbl td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top} .tbl th{background:var(--bg)}
+  footer { margin-top:56px; border-top:1px solid var(--line); padding-top:18px; color:var(--muted); font-size:.88rem; }
+
+.wrap { max-width:900px; margin:0 auto; padding:28px 20px 60px; }
+.scorebox { position:sticky; top:0; background:var(--bg); padding:10px 0; z-index:5; }
+.score { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:10px 16px; font-weight:700; }
+.qcard { background:var(--card); border:1px solid var(--line); border-left:6px solid var(--accent); border-radius:14px; padding:18px 20px; margin-top:16px; }
+.qcard h3 { font-size:1.02rem; margin-bottom:10px; }
+.opt { display:block; width:100%; text-align:left; margin-top:8px; padding:10px 14px; border:1px solid var(--line); border-radius:10px; background:var(--bg); color:var(--ink); font:inherit; cursor:pointer; }
+.opt:hover { border-color:var(--accent); }
+.opt.right { border-color:var(--ok); background:color-mix(in srgb, var(--ok) 12%, var(--bg)); }
+.opt.wrong { border-color:var(--bad); background:color-mix(in srgb, var(--bad) 12%, var(--bg)); }
+.why { display:none; margin-top:10px; color:var(--muted); font-size:.92rem; border-top:1px dashed var(--line); padding-top:8px; }
+.reset { margin-top:20px; background:var(--accent); color:#fff; border:none; border-radius:10px; padding:10px 18px; font:inherit; font-weight:700; cursor:pointer; }
+.parts{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px} .pbtn{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:6px 14px;font:inherit;font-size:.88rem;cursor:pointer} .pbtn.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<p><a href="index.html">← Back to the course home</a></p>
+<h1>🧪 The 📌 UI quiz</h1>
+<p class="sub">15 questions — pick an answer, get the why. Filter by Part below. One attempt per question (until reset). Your best score is saved in this browser.</p>
+<div class="scorebox"><div class="score" id="score">0 / 15 · best: —</div></div>
+<div class="parts" id="parts"><button class="pbtn on" onclick="setPart(0)">All 15</button><button class="pbtn" onclick="setPart(1)">🧱 Part 1 board</button><button class="pbtn" onclick="setPart(2)">🚚 Part 2 shipping</button></div>
+<div id="quiz"></div>
+<button class="reset" onclick="reset()">↺ Reset &amp; retake</button>
+<footer>Part of <a href="https://baluraut.github.io/school/">🏫 The School</a> · <a href="index.html">course home</a> · <a href="https://github.com/BaluRaut/learn-ui-school/issues">🐛 found a mistake?</a></footer>
+</div>
+<script>
+var QS = [{"q": "The three files of any board?", "o": ["Python, SQL, YAML", "HTML (what is pinned), CSS (how it looks), JavaScript (what happens when touched)", "React, Node, npm"], "c": 1, "w": "L01: the browser turns them into the DOM and paints it.", "p": 1}, {"q": "Why &lt;button&gt; instead of &lt;div onclick&gt;?", "o": ["It looks nicer", "Keyboard, focus and screen-reader semantics for free — a div has none", "Divs are slower"], "c": 1, "w": "L02/L06: semantics = meaning every tool understands.", "p": 1}, {"q": "Every &lt;input&gt; needs…", "o": ["A placeholder", "A &lt;label for=&gt; (or wrapping label) — the name tools and users read", "An id only"], "c": 1, "w": "L02.", "p": 1}, {"q": "One board on a phone and on the wall — the habit?", "o": ["Fixed 1200px width", "Mobile first: one column, relative units, @media (min-width) adds columns, images max-width:100%", "Two separate sites"], "c": 1, "w": "L03.", "p": 1}, {"q": "UI = render(state) means…", "o": ["Render once at load", "Change state, call render(); never edit the DOM by hand in a second place", "Use a framework"], "c": 1, "w": "L05: one source of truth.", "p": 1}, {"q": "Rendering user text into the page — the safe way?", "o": ["innerHTML = name", "textContent = name (or a framework's escaping) — innerHTML with data is XSS", "document.write"], "c": 1, "w": "L04/L11.", "p": 1}, {"q": "A screen reader user cannot enrol. First checks?", "o": ["Add more colours", "Keyboard reach and focus, labels on inputs, the status region announcing results", "Bigger buttons"], "c": 1, "w": "L06.", "p": 1}, {"q": "What every framework automates?", "o": ["HTTP", "State → view with diffing, components, events — the ideas of lessons 04–05", "CSS"], "c": 1, "w": "L07: learn the ideas before any framework's API.", "p": 2}, {"q": "Dark mode done right is…", "o": ["A second stylesheet", "A token swap: components never change, --bg/--ink change", "JavaScript that edits every element"], "c": 1, "w": "L08.", "p": 2}, {"q": "Core Web Vitals measure…", "o": ["Bundle size", "What 'fast' means to a person: biggest paint (LCP), responsiveness (INP), layout stability (CLS)", "Server CPU"], "c": 1, "w": "L09: measure on a slow phone.", "p": 2}, {"q": "Hashed filenames + long max-age?", "o": ["Unrelated", "Cache forever safely: a new build gets a new name, so users never see a stale file", "Only for images"], "c": 1, "w": "L09/L12.", "p": 2}, {"q": "Which tests should be few, slow and priceless?", "o": ["Unit tests", "End-to-end tests in a real browser — a handful of golden paths", "Linting"], "c": 1, "w": "L10: the pyramid.", "p": 2}, {"q": "CORS is…", "o": ["A browser bug", "The counter saying which origins may call it from a browser (Access-Control-Allow-Origin)", "An HTTP method"], "c": 1, "w": "L11.", "p": 2}, {"q": "The board validated the form. The counter must…", "o": ["Trust it", "Validate again — the board is kindness, the counter is truth (anyone can send a raw request)", "Skip validation for speed"], "c": 1, "w": "L11: the API school's 400 with problems.", "p": 2}, {"q": "Where should an API key live for a browser app?", "o": ["In the JS bundle", "Not in the browser at all — short-lived user tokens or httpOnly cookies; keys stay on servers", "In localStorage"], "c": 1, "w": "L11: anything shipped to the browser is public.", "p": 2}];
+var KEY='quiz-learn-ui-school', answered={}, score=0, PART=0, SEL=QS;
+function setPart(p){PART=p;SEL=p?QS.filter(function(q){return q.p===p}):QS;[].slice.call(document.querySelectorAll('.pbtn')).forEach(function(b,i){b.classList.toggle('on',i===p)});reset();}
+var best = parseInt(localStorage.getItem(KEY)||'-1');
+function render() {
+  var el = document.getElementById('quiz'); el.innerHTML='';
+  SEL.forEach(function(q,i) {
+    var card=document.createElement('div'); card.className='qcard';
+    card.innerHTML='<h3>'+(i+1)+'. '+q.q+'</h3>';
+    q.o.forEach(function(opt,j) {
+      var b=document.createElement('button'); b.className='opt'; b.textContent=opt;
+      b.onclick=function() {
+        if (answered[i]!==undefined) return;
+        answered[i]=j;
+        if (j===q.c) { b.classList.add('right'); score++; }
+        else { b.classList.add('wrong'); card.querySelectorAll('.opt')[q.c].classList.add('right'); }
+        card.querySelector('.why').style.display='block';
+        update();
+      };
+      card.appendChild(b);
+    });
+    var why=document.createElement('div'); why.className='why'; why.textContent='💡 '+q.w;
+    card.appendChild(why);
+    el.appendChild(card);
+  });
+}
+function update() {
+  var done=Object.keys(answered).length;
+  if (PART===0 && done===QS.length && score>best) { best=score; localStorage.setItem(KEY,best); }
+  document.getElementById('score').textContent=score+' / '+SEL.length+(done===SEL.length?' — done! 🎓':'')+' · best (all 15): '+(best<0?'—':best+'/'+QS.length);
+}
+function reset() { answered={}; score=0; render(); update(); }
+render(); update();
+</script>
+</body>
+</html>

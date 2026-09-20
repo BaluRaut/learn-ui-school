@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Notice Board — Learn UI School</title>
+<meta name="description" content="The school notice board: a zero-dependency web app used by every lesson of Learn UI School.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="board-head">
+  <h1>📌 The Notice Board <small>Class 3A · 3B</small></h1>
+  <nav aria-label="Sections">
+    <a href="#students">Students</a>
+    <a href="#enrol">Enrol</a>
+    <a href="#about">About</a>
+  </nav>
+  <button id="theme" type="button" aria-pressed="false" title="Switch light / dark">🌙 Dark</button>
+</header>
+
+<main id="main">
+  <section id="students" aria-labelledby="students-h">
+    <div class="row">
+      <h2 id="students-h">Students</h2>
+      <span class="filter"><label for="class-filter">Class</label>
+        <select id="class-filter">
+          <option value="">all</option><option>3A</option><option>3B</option>
+        </select></span>
+    </div>
+    <p id="status" class="status" role="status" aria-live="polite">Loading…</p>
+    <ul id="student-list" class="cards" aria-busy="true"></ul>
+  </section>
+
+  <section id="enrol" aria-labelledby="enrol-h">
+    <h2 id="enrol-h">Enrol a student</h2>
+    <form id="enrol-form" novalidate>
+      <div class="field">
+        <label for="name">Name <span aria-hidden="true">*</span></label>
+        <input id="name" name="name" required minlength="2" autocomplete="off" placeholder="e.g. Zoya">
+        <small id="name-help">At least 2 characters.</small>
+      </div>
+      <div class="field">
+        <label for="class">Class <span aria-hidden="true">*</span></label>
+        <select id="class" name="class" required>
+          <option value="">choose…</option><option>3A</option><option>3B</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="grade">Grade</label>
+        <select id="grade" name="grade"><option>C</option><option>B</option><option>B+</option><option>A</option><option>A+</option></select>
+      </div>
+      <button type="submit">➕ Enrol</button>
+      <p id="form-msg" class="status" role="alert"></p>
+    </form>
+  </section>
+
+  <section id="about" aria-labelledby="about-h">
+    <h2 id="about-h">About this board</h2>
+    <p>Plain HTML, one stylesheet, one script, no framework — the same app every lesson of the
+      <a href="https://baluraut.github.io/learn-ui-school/">UI school</a> reads, breaks and improves.
+      It talks to a tiny API (<code>ui/mock_api.py</code>) the way the
+      <a href="https://baluraut.github.io/learn-api-school/">API school</a> taught.</p>
+  </section>
+</main>
+
+<footer>Learn UI School · the board is in the repo · <span id="count"></span></footer>
+<template id="student-card">
+  <li class="card">
+    <img alt="" width="40" height="40">
+    <div><strong class="name"></strong><br><span class="meta"></span></div>
+    <span class="grade" aria-label="grade"></span>
+  </li>
+</template>
+<script src="app.js"></script>
+</body>
+</html>

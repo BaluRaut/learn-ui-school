@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1160" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs><marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#64748b"/></marker></defs>
+  <style>
+    .band1 { fill: #fff; stroke: #db2777; stroke-width: 3; } .band2 { fill: #fff; stroke: #4f46e5; stroke-width: 3; }
+    .bxp { fill: #fff; stroke: #db2777; stroke-width: 2.5; } .bxo { fill: #fff; stroke: #4f46e5; stroke-width: 2.5; }
+    .warn { fill: #fef2f2; stroke: #dc2626; stroke-width: 1.5; stroke-dasharray: 7 6; } .tip { fill: #fdf2f8; stroke: #db2777; stroke-width: 1.5; } .win { fill: #eef2ff; stroke: #4f46e5; stroke-width: 1.5; }
+    .title { font-size: 36px; font-weight: 800; fill: #0f172a; } .bandt { font-size: 26px; font-weight: 800; }
+    .t { font-size: 19px; font-weight: 600; fill: #0f172a; } .s { font-size: 15px; fill: #475569; } .m { text-anchor: middle; }
+    .ntb { font-size: 15px; font-weight: 700; fill: #fff; text-anchor: middle; }
+  </style>
+  <rect x="0" y="0" width="1920" height="1160" fill="#ffffff"/>
+  <text class="title m" x="960" y="52">The Big Picture — UI: the notice board · the board is in the repo</text>
+
+  <rect class="band1" x="40" y="80" width="1840" height="470" rx="20"/>
+  <text class="bandt" x="70" y="122" fill="#db2777">🧱 PART 1 — THE BOARD (lessons 1–6)</text>
+
+  <rect class="bxp" x="70" y="170" width="330" height="130" rx="14"/>
+  <text class="t m" x="235" y="203">📌 what people see IS the product</text>
+  <text class="s m" x="235" y="231">the record room keeps the truth, the counter</text>
+  <text class="s m" x="235" y="255">answers slips — the board is where a person</text>
+  <text class="s m" x="235" y="279">finally sees any of it (HTML → DOM → paint)</text>
+  <g transform="translate(70,170)"><circle r="13" fill="#db2777"/><text class="ntb" dy="5">1</text></g>
+
+  <rect class="bxp" x="460" y="170" width="400" height="130" rx="14"/>
+  <text class="t m" x="660" y="203">🧱🎨 structure + looks</text>
+  <text class="s m" x="660" y="231">header · nav · main · form with labels · alt text —</text>
+  <text class="s m" x="660" y="255">meaning every tool understands · box model, flexbox,</text>
+  <text class="s m" x="660" y="279">grid · mobile first, one column → two at 720px</text>
+  <g transform="translate(460,170)"><circle r="13" fill="#db2777"/><text class="ntb" dy="5">2</text></g>
+
+  <rect class="bxp" x="920" y="170" width="400" height="130" rx="14"/>
+  <text class="t m" x="1120" y="203">⚡🧠 alive — events and state</text>
+  <text class="s m" x="1120" y="231">event → change state → render() · one source of</text>
+  <text class="s m" x="1120" y="255">truth · components are functions of data ·</text>
+  <text class="s m" x="1120" y="279">fetch with a timeout; textContent, never innerHTML</text>
+  <g transform="translate(920,170)"><circle r="13" fill="#db2777"/><text class="ntb" dy="5">3</text></g>
+
+  <rect class="bxp" x="1380" y="170" width="470" height="130" rx="14"/>
+  <text class="t m" x="1615" y="203">♿ everyone can read the board</text>
+  <text class="s m" x="1615" y="231">Tab reaches everything, focus is visible, a skip link ·</text>
+  <text class="s m" x="1615" y="255">every input has a label, every image an alt ·</text>
+  <text class="s m" x="1615" y="279">contrast 4.5:1 · aria-live announces what changed</text>
+  <g transform="translate(1380,170)"><circle r="13" fill="#db2777"/><text class="ntb" dy="5">4</text></g>
+
+  <rect class="tip" x="70" y="400" width="880" height="110" rx="14"/>
+  <text class="t m" x="510" y="438">🔬 ui/index.html + ui/styles.css + ui/app.js — three files, no framework, no build</text>
+  <text class="s m" x="510" y="466">80 lines of semantic HTML · 60 lines of tokens and layout · 100 lines of state → render, events and fetch</text>
+  <text class="s m" x="510" y="490">python3 ui/mock_api.py serves the board and its counter; ?slow=1 and ?fail=1 show the loading and error faces</text>
+
+  <rect class="warn" x="990" y="400" width="860" height="110" rx="14"/>
+  <text class="t m" x="1420" y="438">⚠️ the two mistakes every first board makes</text>
+  <text class="s m" x="1420" y="466">a &lt;div onclick&gt; instead of a &lt;button&gt; (no keyboard, no focus, no announcement) —</text>
+  <text class="s m" x="1420" y="490">and state kept in the DOM, edited in three places, drifting apart. UI = render(state).</text>
+
+  <text class="t m" x="960" y="590">python3 ui/mock_api.py · python3 ui/smoke_test.py — the board, and ten checks that it still stands</text>
+
+  <rect class="band2" x="40" y="620" width="1840" height="500" rx="20"/>
+  <text class="bandt" x="70" y="662" fill="#4f46e5">🚚 PART 2 — SHIPPING THE BOARD (lessons 7–12)</text>
+
+  <rect class="bxo" x="70" y="700" width="420" height="200" rx="14"/>
+  <text class="t m" x="280" y="733">🧰🎽 frameworks · the uniform (7–8)</text>
+  <text class="s m" x="280" y="761">React, Vue, Svelte automate state → view,</text>
+  <text class="s m" x="280" y="785">diffing, components — the ideas you did by</text>
+  <text class="s m" x="280" y="809">hand; vanilla until three components share state</text>
+  <text class="s m" x="280" y="845">tokens: --bg --ink --accent --space-2 · dark</text>
+  <text class="s m" x="280" y="869">mode is a token swap, components never change</text>
+  <g transform="translate(70,700)"><circle r="13" fill="#4f46e5"/><text class="ntb" dy="5">1</text></g>
+
+  <rect class="bxo" x="540" y="700" width="420" height="200" rx="14"/>
+  <text class="t m" x="750" y="733">🚀🧪 fast · tested (9–10)</text>
+  <text class="s m" x="750" y="761">fewer bytes, right-sized lazy images, long</text>
+  <text class="s m" x="750" y="785">max-age + hashed names, a CDN · LCP, INP,</text>
+  <text class="s m" x="750" y="809">CLS measured on a slow phone</text>
+  <text class="s m" x="750" y="845">the pyramid: many unit, some component, few</text>
+  <text class="s m" x="750" y="869">end-to-end · smoke checks in CI on every push</text>
+  <g transform="translate(540,700)"><circle r="13" fill="#4f46e5"/><text class="ntb" dy="5">2</text></g>
+
+  <rect class="bxo" x="1010" y="700" width="400" height="200" rx="14"/>
+  <text class="t m" x="1210" y="733">📨 talking to the counter (11)</text>
+  <text class="s m" x="1210" y="761">CORS says who may call from a browser ·</text>
+  <text class="s m" x="1210" y="785">no API keys in JS — short-lived user tokens ·</text>
+  <text class="s m" x="1210" y="809">three faces per request: loading, success, error ·</text>
+  <text class="s m" x="1210" y="833">validate on the board for kindness,</text>
+  <text class="s m" x="1210" y="857">on the counter for truth</text>
+  <g transform="translate(1010,700)"><circle r="13" fill="#4f46e5"/><text class="ntb" dy="5">3</text></g>
+
+  <rect class="bxo" x="1460" y="700" width="390" height="200" rx="14"/>
+  <text class="t m" x="1655" y="733">🚚 pinned up (12)</text>
+  <text class="s m" x="1655" y="761">the board is just files: static hosting,</text>
+  <text class="s m" x="1655" y="785">a CDN, cache-busted by build hash ·</text>
+  <text class="s m" x="1655" y="809">GitHub Pages / S3 + CloudFront ·</text>
+  <text class="s m" x="1655" y="833">watch real users: JS errors, web vitals</text>
+  <text class="s m" x="1655" y="869">(this School's own pages ship this way)</text>
+  <g transform="translate(1460,700)"><circle r="13" fill="#4f46e5"/><text class="ntb" dy="5">4</text></g>
+
+  <rect class="win" x="70" y="950" width="1780" height="140" rx="14"/>
+  <text class="t m" x="960" y="990">🧭 read one board, read them all: HTML means something · CSS bends to the screen · events change state, state renders the view</text>
+  <text class="s m" x="960" y="1020">semantics make it accessible · tokens make it consistent · fewer bytes make it fast · a few tests keep it standing · the counter is never trusted by, nor trusts, the board</text>
+  <text class="s m" x="960" y="1050">siblings: the API school is the counter this board fills slips for · the Database school is the record room behind it · the CI/CD school pins the board up on every push</text>
+</svg>

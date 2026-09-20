@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson diagrams — Learn UI School</title>
+<meta name="description" content="All 12 UI lessons as numbered diagrams — HTML, CSS, JavaScript, state, accessibility, frameworks, tokens, performance, testing, backends, deploy — on one page.">
+<meta property="og:title" content="Lesson diagrams — Learn UI School">
+<meta property="og:description" content="All 12 UI lessons as numbered diagrams — HTML, CSS, JavaScript, state, accessibility, frameworks, tokens, performance, testing, backends, deploy — on one page.">
+<meta property="og:image" content="https://baluraut.github.io/learn-ui-school/images/big-picture-4k.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root { --bg:#f8fafc; --card:#fff; --ink:#0f172a; --muted:#475569; --line:#e2e8f0; --accent:#db2777; --ok:#16a34a; --blue:#2563eb; --bad:#dc2626; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0b1220; --card:#131c2e; --ink:#e2e8f0; --muted:#94a3b8; --line:#253349; } }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--ink); font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif; line-height:1.6; }
+  .wrap { max-width:1280px; margin:0 auto; padding:28px 20px 60px; }
+  @media (min-width: 1660px) { .wrap { max-width: 1580px; } }
+  a { color:var(--blue); } h1 { font-size:2rem; line-height:1.25; } h2 { font-size:1.4rem; margin:44px 0 6px; }
+  .sub { color:var(--muted); max-width:74ch; }
+  .chips { display:flex; flex-wrap:wrap; gap:8px; margin:16px 0 8px; }
+  .chip { border:1px solid var(--line); background:var(--card); border-radius:999px; padding:6px 14px; font-size:.85rem; color:var(--muted); }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:14px; margin-top:16px; }
+  .lesson { background:var(--card); border:1px solid var(--line); border-top:5px solid var(--c,var(--accent)); border-radius:14px; padding:16px; display:flex; flex-direction:column; gap:6px; }
+  .lesson .top { display:flex; align-items:center; gap:10px; }
+  .lesson .num { flex:none; width:30px; height:30px; border-radius:50%; background:var(--c,var(--accent)); color:#fff; display:inline-flex; align-items:center; justify-content:center; font-weight:800; font-size:.9rem; }
+  .lesson h3 { font-size:1.02rem; line-height:1.3; } .lesson .ana { color:var(--muted); font-size:.9rem; }
+  .lesson code { font-size:.78rem; background:var(--bg); border:1px solid var(--line); border-radius:6px; padding:1px 6px; }
+  .lesson a.go { margin-top:auto; font-weight:600; font-size:.9rem; text-decoration:none; } .lesson a.go+a.go { margin-top:0; } .lesson a.go:hover { text-decoration:underline; }
+  .callout { background:var(--card); border:1px solid var(--line); border-left:6px solid var(--ok); border-radius:14px; padding:18px 20px; margin-top:16px; }
+  pre { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px; overflow-x:auto; font-size:.88rem; margin-top:12px; }
+  .btn { display:inline-block; background:var(--accent); color:#fff; border-radius:10px; padding:10px 18px; text-decoration:none; font-weight:700; margin:14px 10px 0 0; }
+  .btn.alt { background:transparent; color:var(--ink); border:1px solid var(--line); }
+  .vs { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:14px; margin-top:16px; }
+  .vcol { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px; } .vcol h3 { margin-bottom:8px; }
+  .vcol ul { margin-left:18px; color:var(--muted); font-size:.93rem; }
+  .tbl{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 14px;margin-top:12px} .tbl table{border-collapse:collapse;width:100%;font-size:.9rem} .tbl th,.tbl td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top} .tbl th{background:var(--bg)}
+  footer { margin-top:56px; border-top:1px solid var(--line); padding-top:18px; color:var(--muted); font-size:.88rem; }
+
+  .dsec { background:var(--card); border:1px solid var(--line); border-top:6px solid var(--c,var(--accent)); border-radius:16px; padding:22px 22px 16px; margin-top:26px; scroll-margin-top:16px; }
+  .dsec h2 { font-size:1.25rem; display:flex; align-items:center; gap:10px; }
+  .dsec h2 .ln { flex:none; width:32px; height:32px; border-radius:50%; background:var(--c,var(--accent)); color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:.95rem; font-weight:800; }
+  .dsec p.d { color:var(--muted); font-size:.95rem; margin:6px 0 4px; }
+  .dsec svg { width:100%; height:auto; display:block; margin-top:10px; } .dsec .foot { margin-top:8px; font-size:.92rem; }
+  .box { fill:var(--card); stroke:var(--c,var(--accent)); stroke-width:2; }
+  .soft { fill:var(--bg); stroke:var(--line); stroke-width:1.5; }
+  .dead { fill:var(--bg); stroke:var(--muted); stroke-width:1.5; stroke-dasharray:6 5; }
+  .t { font:600 14px -apple-system,"Segoe UI",sans-serif; fill:var(--ink); }
+  .s { font:12px -apple-system,"Segoe UI",sans-serif; fill:var(--muted); } .m { text-anchor:middle; }
+  .arr { stroke:#64748b; stroke-width:2; fill:none; marker-end:url(#arw); } .dash { stroke-dasharray:6 5; }
+  .nc { fill:var(--c,var(--accent)); } .nt { font:700 12px -apple-system,sans-serif; fill:#fff; text-anchor:middle; }
+  @media print { .btn, footer { display:none; } .dsec { break-inside:avoid; } }
+
+  .toc { display:flex; flex-wrap:wrap; gap:8px; margin:18px 0 6px; }
+  .toc a { border:1px solid var(--line); background:var(--card); border-radius:999px; padding:5px 12px; font-size:.82rem; color:var(--muted); text-decoration:none; }
+  .toc a:hover { color:var(--ink); border-color:var(--muted); }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs><marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#64748b"/></marker></defs></svg>
+<div class="wrap">
+<header>
+  <p><a href="index.html">← Back to the course home</a></p>
+  <h1>📐 The 12 lessons as diagrams</h1>
+  <p class="sub">Part 1: the board (pink, 1–6) · Part 2: shipping it (indigo, 7–12). Follow the circled numbers <b>1 → 2 → 3</b>.</p>
+  <nav class="toc"><a href="#l01">1 Why UI</a><a href="#l02">2 HTML</a><a href="#l03">3 CSS</a><a href="#l04">4 JavaScript</a><a href="#l05">5 State</a><a href="#l06">6 Accessibility</a><a href="#l07">7 Frameworks</a><a href="#l08">8 Tokens</a><a href="#l09">9 Performance</a><a href="#l10">10 Testing</a><a href="#l11">11 Backends</a><a href="#l12">12 Deploy</a></nav>
+</header>
+
+<!-- 01 -->
+<section class="dsec" id="l01" style="--c:#db2777">
+  <h2><span class="ln">1</span> 📌 Why UI</h2>
+  <p class="d">The notice board — what people see IS the product; the browser, the DOM, one HTML file.</p>
+  <svg viewBox="0 0 940 305" role="img"><rect class="dead" x="40" y="60" width="330" height="170" rx="14"/><text class="t m" x="205" y="92">🗄️📨 the room and the counter</text><text class="s m" x="205" y="120">the Database school keeps the truth;</text><text class="s m" x="205" y="142">the API school answers slips —</text><text class="s m" x="205" y="164">and nobody has SEEN anything yet</text><text class="s m" x="205" y="196">= a perfect back office with no front</text><g transform="translate(40,60)"><circle r="11" class="nc"/><text class="nt" dy="4">1</text></g><rect class="box" x="440" y="40" width="460" height="220" rx="14"/><text class="t m" x="670" y="72">📌 the notice board — the UI</text><rect class="soft" x="465" y="95" width="200" height="55" rx="10"/><text class="s m" x="565" y="118">1 HTML: what is pinned</text><text class="s m" x="565" y="138">(structure, meaning)</text><rect class="soft" x="690" y="95" width="185" height="55" rx="10"/><text class="s m" x="782" y="118">2 CSS: how it looks</text><text class="s m" x="782" y="138">(layout, the uniform)</text><rect class="soft" x="560" y="175" width="230" height="55" rx="10"/><text class="s m" x="675" y="198">3 JS: what happens when</text><text class="s m" x="675" y="218">someone touches it</text><line class="arr" x1="665" y1="122" x2="686" y2="122"/><line class="arr" x1="782" y1="150" x2="700" y2="171"/><g transform="translate(440,40)"><circle r="11" class="nc"/><text class="nt" dy="4">2</text></g><text class="s m" x="470" y="290">the browser turns text into a tree (the DOM) and paints it — what people see IS the product 👀</text><g transform="translate(40,290)"><circle r="11" class="nc"/><text class="nt" dy="4">3</text></g>
+  </svg>
+  <p class="foot"><a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-01-why-ui/lessons/01-why-ui/README.md">Read full lesson 01 →</a></p>
+</section>
+
+<!-- 02 -->
+<section class="dsec" id="l02" style="--c:#db2777">
+  <h2><span class="ln">2</span> 🧱 HTML structure</h2>
+  <p class="d">The board's skeleton — semantic elements, forms, labels, alt text.</p>
+  <svg viewBox="0 0 940 305" role="img"><rect class="box" x="40" y="40" width="270" height="110" rx="14"/><text class="t m" x="175" y="70">🧱 landmarks</text><text class="s m" x="175" y="96">header · nav · main · section ·</text><text class="s m" x="175" y="118">footer — the board&#39;s skeleton</text><g transform="translate(40,40)"><circle r="11" class="nc"/><text class="nt" dy="4">1</text></g><rect class="box" x="360" y="40" width="270" height="110" rx="14"/><text class="t m" x="495" y="70">📝 forms that mean it</text><text class="s m" x="495" y="96">label for= · required · minlength ·</text><text class="s m" x="495" y="118">select/option · button type=submit</text><g transform="translate(360,40)"><circle r="11" class="nc"/><text class="nt" dy="4">2</text></g><rect class="box" x="680" y="40" width="230" height="110" rx="14"/><text class="t m" x="795" y="70">🖼️ alt, lang, title</text><text class="s m" x="795" y="96">every img an alt · html lang=</text><text class="s m" x="795" y="118">· one h1 · headings in order</text><g transform="translate(680,40)"><circle r="11" class="nc"/><text class="nt" dy="4">3</text></g><line class="arr" x1="310" y1="95" x2="356" y2="95"/><line class="arr" x1="630" y1="95" x2="676" y2="95"/><rect class="soft" x="40" y="185" width="870" height="100" rx="14"/><text class="t m" x="475" y="212">🧠 semantics = meaning the browser, search engines and screen readers all understand</text><text class="s m" x="475" y="238">&lt;button&gt; is clickable, focusable, keyboard-able for free; a &lt;div onclick&gt; is none of those · &lt;ul&gt; of &lt;li&gt; is announced as &#39;list, 5 items&#39;</text><text class="s m" x="475" y="262">ui/index.html: 80 lines, every element chosen for what it means — style comes next</text><g transform="translate(40,185)"><circle r="11" class="nc"/><text class="nt" dy="4">4</text></g>
+  </svg>
+  <p class="foot"><a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-02-html-structure/lessons/02-html-structure/README.md">Read full lesson 02 →</a></p>
+</section>
+
+<!-- 03 -->
+<section class="dsec" id="l03" style="--c:#db2777">
+  <h2><span class="ln">3</span> 🎨 CSS layout</h2>
+  <p class="d">The board's layout — box model, flexbox, grid; one board on a phone and on the wall.</p>
+  <svg viewBox="0 0 940 305" role="img"><rect class="box" x="40" y="40" width="270" height="110" rx="14"/><text class="t m" x="175" y="70">📦 the box model</text><text class="s m" x="175" y="96">content · padding · border · margin</text><text class="s m" x="175" y="118">box-sizing: border-box, always</text><g transform="translate(40,40)"><circle r="11" class="nc"/><text class="nt" dy="4">1</text></g><rect class="box" x="360" y="40" width="270" height="110" rx="14"/><text class="t m" x="495" y="70">↔️ flexbox — one line of things</text><text class="s m" x="495" y="96">display:flex · gap · align-items ·</text><text class="s m" x="495" y="118">margin-left:auto pushes the nav right</text><g transform="translate(360,40)"><circle r="11" class="nc"/><text class="nt" dy="4">2</text></g><rect class="box" x="680" y="40" width="230" height="110" rx="14"/><text class="t m" x="795" y="70">▦ grid — a page of areas</text><text class="s m" x="795" y="96">grid-template-columns: 2fr 1fr ·</text><text class="s m" x="795" y="118">auto-fill, minmax(200px, 1fr)</text><g transform="translate(680,40)"><circle r="11" class="nc"/><text class="nt" dy="4">3</text></g><line class="arr" x1="310" y1="95" x2="356" y2="95"/><line class="arr" x1="630" y1="95" x2="676" y2="95"/><rect class="soft" x="40" y="185" width="870" height="100" rx="14"/><text class="t m" x="475" y="212">📱🖥️ one board, every size — responsive</text><text class="s m" x="475" y="238">mobile first: one column; @media (min-width: 720px) → two columns · relative units (rem, %, fr) · max-width on the page ·</text><text class="s m" x="475" y="262">images max-width:100% · never a fixed width wider than a phone — ui/styles.css, ~60 lines, is the whole layout</text><g transform="translate(40,185)"><circle r="11" class="nc"/><text class="nt" dy="4">4</text></g>
+  </svg>
+  <p class="foot"><a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-03-css-layout/lessons/03-css-layout/README.md">Read full lesson 03 →</a></p>
+</section>
+
+<!-- 04 -->
+<section class="dsec" id="l04" style="--c:#db2777">
+  <h2><span class="ln">4</span> ⚡ JavaScript &amp; events</h2>
+  <p class="d">The board comes alive — events, DOM updates, fetch to the counter.</p>
+  <svg viewBox="0 0 940 305" role="img"><rect class="box" x="40" y="40" width="270" height="110" rx="14"/><text class="t m" x="175" y="70">👆 an event</text><text class="s m" x="175" y="96">change on #class-filter ·</text><text class="s m" x="175" y="118">submit on #enrol-form</text><g transform="translate(40,40)"><circle r="11" class="nc"/><text class="nt" dy="4">1</text></g><rect class="box" x="360" y="40" width="270" height="110" rx="14"/><text class="t m" x="495" y="70">🧠 a handler changes state</text><text class="s m" x="495" y="96">state.filter = e.target.value</text><text class="s m" x="495" y="118">e.preventDefault() on the form</text><g transform="translate(360,40)"><circle r="11" class="nc"/><text class="nt" dy="4">2</text></g><rect class="box" x="680" y="40" width="230" height="110" rx="14"/><text class="t m" x="795" y="70">🖼️ render() repaints</text><text class="s m" x="795" y="96">replaceChildren(cards) ·</text><text class="s m" x="795" y="118">textContent, never innerHTML</text><g transform="translate(680,40)"><circle r="11" class="nc"/><text class="nt" dy="4">3</text></g><line class="arr" x1="310" y1="95" x2="356" y2="95"/><line class="arr" x1="630" y1="95" x2="676" y2="95"/><rect class="soft" x="40" y="185" width="870" height="100" rx="14"/><text class="t m" x="475" y="212">📨 fetch — the board fills in the counter&#39;s slip</text><text class="s m" x="475" y="238">await fetch(&#39;/api/students&#39;, {{signal: AbortSignal.timeout(5000)}}) → r.ok? → r.json() — the API school&#39;s HTTP, from the browser ·</text><text class="s m" x="475" y="262">async/await + try/finally: loading → done or error, and the UI shows each state (lesson 11)</text><g transform="translate(40,185)"><circle r="11" class="nc"/><text class="nt" dy="4">4</text></g>
+  </svg>
+  <p class="foot"><a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-04-javascript-events/lessons/04-javascript-events/README.md">Read full lesson 04 →</a></p>
+</section>
+
+<!-- 05 -->
+<section class="dsec" id="l05" style="--c:#db2777">
+  <h2><span class="ln">5</span> 🧠 State &amp; components</h2>
+  <p class="d">One source of truth — state → render, components as functions of data.</p>
+  <svg viewBox="0 0 940 305" role="img"><rect class="box" x="40" y="40" width="270" height="110" rx="14"/><text class="t m" x="175" y="70">🧠 one source of truth</text><text class="s m" x="175" y="96">state = {{students, filter,</text><text class="s m" x="175" y="118">loading, error}} — nothing else</text><g transform="translate(40,40)"><circle r="11" class="nc"/><text class="nt" dy="4">1</text></g><rect class="box" x="360" y="40" width="270" height="110" rx="14"/><text class="t m" x="495" y="70">🧩 components</text><text class="s m" x="495" y="96">StudentCard(s) → element ·</text><text class="s m" x="495" y="118">pure: same data, same DOM</text><g transform="translate(360,40)"><circle r="11" class="nc"/><text class="nt" dy="4">2</text></g><rect class="box" x="680" y="40" width="230" height="110" rx="14"/><text class="t m" x="795" y="70">🔁 UI = render(state)</text><text class="s m" x="795" y="96">change state → call render() ·</text><text class="s m" x="795" y="118">never edit the DOM by hand</text><g transform="translate(680,40)"><circle r="11" class="nc"/><text class="nt" dy="4">3</text></g><line class="arr" x1="310" y1="95" x2="356" y2="95"/><line class="arr" x1="630" y1="95" x2="676" y2="95"/><rect class="soft" x="40" y="185" width="870" height="100" rx="14"/><text class="t m" x="475" y="212">🎯 the idea every framework automates</text><text class="s m" x="475" y="238">React, Vue, Svelte: components + state → view, with a diffing engine so render() is cheap ·</text><text class="s m" x="475" y="262">ui/app.js does it by hand in 100 lines — read it once and frameworks stop being magic (lesson 07)</text><g transform="translate(40,185)"><circle r="11" class="nc"/><text class="nt" dy="4">4</text></g>
+  </svg>
+  <p class="foot"><a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-05-state-components/lessons/05-state-components/README.md">Read full lesson 05 →</a></p>
+</section>
+
+<!-- 06 -->
+<section class="dsec" id="l06" style="--c:#db2777">
+  <h2><span class="ln">6</span> ♿ Accessibility</h2>
+  <p class="d">Everyone can read the board — keyboard, labels, contrast, focus, ARIA, screen readers.</p>
+  <svg viewBox="0 0 940 305" role="img"><rect class="box" x="40" y="40" width="200" height="120" rx="14"/><text class="t m" x="140" y="70">⌨️ keyboard</text><text class="s m" x="140" y="96">Tab reaches everything ·</text><text class="s m" x="140" y="118">a skip link first ·</text><text class="s m" x="140" y="140">:focus-visible is visible</text><g transform="translate(40,40)"><circle r="11" class="nc"/><text class="nt" dy="4">1</text></g><rect class="box" x="270" y="40" width="200" height="120" rx="14"/><text class="t m" x="370" y="70">🏷️ names</text><text class="s m" x="370" y="96">label for= every input ·</text><text class="s m" x="370" y="118">alt on images · aria-label</text><text class="s m" x="370" y="140">where text is missing</text><g transform="translate(270,40)"><circle r="11" class="nc"/><text class="nt" dy="4">2</text></g><rect class="box" x="500" y="40" width="200" height="120" rx="14"/><text class="t m" x="600" y="70">🎨 contrast + motion</text><text class="s m" x="600" y="96">4.5:1 text · not colour</text><text class="s m" x="600" y="118">alone · reduced-motion</text><text class="s m" x="600" y="140">respected</text><g transform="translate(500,40)"><circle r="11" class="nc"/><text class="nt" dy="4">3</text></g><rect class="box" x="730" y="40" width="180" height="120" rx="14"/><text class="t m" x="820" y="70">📣 live regions</text><text class="s m" x="820" y="96">role=status /</text><text class="s m" x="820" y="118">aria-live=polite: the</text><text class="s m" x="820" y="140">board announces changes</text><g transform="translate(730,40)"><circle r="11" class="nc"/><text class="nt" dy="4">4</text></g><rect class="soft" x="40" y="195" width="870" height="90" rx="14"/><text class="t m" x="475" y="222">♿ accessible = usable by everyone, and by every tool</text><text class="s m" x="475" y="248">screen readers, keyboard-only users, voice control, search engines and your own tests all read the same semantics — a11y is not a layer, it is HTML done right</text><text class="s m" x="475" y="270">ui/smoke_test.py checks lang, one h1, labels, alt, the skip link and the live region on every run</text>
+  </svg>
+  <p class="foot"><a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-06-accessibility/lessons/06-accessibility/README.md">Read full lesson 06 →</a></p>
+</section>
+
+<!-- 07 -->
+<section class="dsec" id="l07" style="--c:#4f46e5">
+  <h2><span class="ln">7</span> 🧰 Frameworks</h2>
+  <p class="d">React, Vue, Svelte in one lesson — what they automate, when vanilla is enough.</p>
+  <svg viewBox="0 0 940 305" role="img"><rect class="box" x="40" y="40" width="200" height="120" rx="14"/><text class="t m" x="140" y="70">⚛️ React</text><text class="s m" x="140" y="96">components as functions,</text><text class="s m" x="140" y="118">JSX, hooks (useState) —</text><text class="s m" x="140" y="140">the biggest ecosystem</text><g transform="translate(40,40)"><circle r="11" class="nc"/><text class="nt" dy="4">1</text></g><rect class="box" x="270" y="40" width="200" height="120" rx="14"/><text class="t m" x="370" y="70">🟢 Vue</text><text class="s m" x="370" y="96">templates + reactive</text><text class="s m" x="370" y="118">state, single-file</text><text class="s m" x="370" y="140">components — gentle</text><g transform="translate(270,40)"><circle r="11" class="nc"/><text class="nt" dy="4">2</text></g><rect class="box" x="500" y="40" width="200" height="120" rx="14"/><text class="t m" x="600" y="70">🧡 Svelte</text><text class="s m" x="600" y="96">compiles away at build</text><text class="s m" x="600" y="118">time — tiny bundles,</text><text class="s m" x="600" y="140">plain-looking code</text><g transform="translate(500,40)"><circle r="11" class="nc"/><text class="nt" dy="4">3</text></g><rect class="box" x="730" y="40" width="180" height="120" rx="14"/><text class="t m" x="820" y="70">🍦 vanilla</text><text class="s m" x="820" y="96">what ui/app.js does —</text><text class="s m" x="820" y="118">enough for small</text><text class="s m" x="820" y="140">boards and widgets</text><g transform="translate(730,40)"><circle r="11" class="nc"/><text class="nt" dy="4">4</text></g><rect class="soft" x="40" y="195" width="870" height="90" rx="14"/><text class="t m" x="475" y="222">🧰 what every framework automates: state → view, diffing, events, components, routing</text><text class="s m" x="475" y="248">pick by team and ecosystem, not by benchmark · vanilla until the third component shares state · learn the ideas (lessons 04–05) before the API of any one framework</text><text class="s m" x="475" y="270">the notice board in React would be the same state object, the same StudentCard, and render() for free</text>
+  </svg>
+  <p class="foot"><a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-07-frameworks/lessons/07-frameworks/README.md">Read full lesson 07 →</a></p>
+</section>
+
+<!-- 08 -->
+<section class="dsec" id="l08" style="--c:#4f46e5">
+  <h2><span class="ln">8</span> 🎽 Design systems &amp; tokens</h2>
+  <p class="d">The school uniform — colours, spacing, type and dark mode from one token sheet.</p>
+  <svg viewBox="0 0 940 305" role="img"><rect class="box" x="40" y="40" width="270" height="110" rx="14"/><text class="t m" x="175" y="70">🎽 tokens</text><text class="s m" x="175" y="96">--bg --ink --accent --space-2</text><text class="s m" x="175" y="118">--radius — named, not magic numbers</text><g transform="translate(40,40)"><circle r="11" class="nc"/><text class="nt" dy="4">1</text></g><rect class="box" x="360" y="40" width="270" height="110" rx="14"/><text class="t m" x="495" y="70">🌙 dark mode = a token swap</text><text class="s m" x="495" y="96">prefers-color-scheme + data-theme</text><text class="s m" x="495" y="118">— components never change</text><g transform="translate(360,40)"><circle r="11" class="nc"/><text class="nt" dy="4">2</text></g><rect class="box" x="680" y="40" width="230" height="110" rx="14"/><text class="t m" x="795" y="70">📚 the design system</text><text class="s m" x="795" y="96">tokens + components + rules ·</text><text class="s m" x="795" y="118">one uniform, every page</text><g transform="translate(680,40)"><circle r="11" class="nc"/><text class="nt" dy="4">3</text></g><line class="arr" x1="310" y1="95" x2="356" y2="95"/><line class="arr" x1="630" y1="95" x2="676" y2="95"/><rect class="soft" x="40" y="185" width="870" height="100" rx="14"/><text class="t m" x="475" y="212">🎨 consistency is a feature</text><text class="s m" x="475" y="238">a spacing scale (6/12/20) · a type scale · a colour palette with contrast checked once · radius, shadows, motion — decided once, reused everywhere ·</text><text class="s m" x="475" y="262">ui/styles.css: change --accent and the whole board changes; that is the entire idea</text><g transform="translate(40,185)"><circle r="11" class="nc"/><text class="nt" dy="4">4</text></g>
+  </svg>
+  <p class="foot"><a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-08-design-tokens/lessons/08-design-tokens/README.md">Read full lesson 08 →</a></p>
+</section>
+
+<!-- 09 -->
+<section class="dsec" id="l09" style="--c:#4f46e5">
+  <h2><span class="ln">9</span> 🚀 Performance</h2>
+  <p class="d">The board loads fast — bundles, lazy images, caching, Core Web Vitals.</p>
+  <svg viewBox="0 0 940 305" role="img"><rect class="box" x="40" y="40" width="270" height="110" rx="14"/><text class="t m" x="175" y="70">⚖️ weight</text><text class="s m" x="175" y="96">fewer bytes: minify, bundle,</text><text class="s m" x="175" y="118">tree-shake, compress (gzip/br)</text><g transform="translate(40,40)"><circle r="11" class="nc"/><text class="nt" dy="4">1</text></g><rect class="box" x="360" y="40" width="270" height="110" rx="14"/><text class="t m" x="495" y="70">🖼️ images</text><text class="s m" x="495" y="96">right size, modern formats (webp/avif),</text><text class="s m" x="495" y="118">loading=lazy, width/height set</text><g transform="translate(360,40)"><circle r="11" class="nc"/><text class="nt" dy="4">2</text></g><rect class="box" x="680" y="40" width="230" height="110" rx="14"/><text class="t m" x="795" y="70">🧊 caching</text><text class="s m" x="795" y="96">long max-age + hashed filenames ·</text><text class="s m" x="795" y="118">CDN close to the reader</text><g transform="translate(680,40)"><circle r="11" class="nc"/><text class="nt" dy="4">3</text></g><line class="arr" x1="310" y1="95" x2="356" y2="95"/><line class="arr" x1="630" y1="95" x2="676" y2="95"/><rect class="soft" x="40" y="185" width="870" height="100" rx="14"/><text class="t m" x="475" y="212">📏 Core Web Vitals — what &#39;fast&#39; means to a person</text><text class="s m" x="475" y="238">LCP: the biggest thing painted soon · INP: taps respond quickly · CLS: nothing jumps around · measure in DevTools / Lighthouse, on a slow phone, not your laptop ·</text><text class="s m" x="475" y="262">the notice board ships 3 files, no framework, inline SVG avatars — it scores well by having little to load</text><g transform="translate(40,185)"><circle r="11" class="nc"/><text class="nt" dy="4">4</text></g>
+  </svg>
+  <p class="foot"><a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-09-performance/lessons/09-performance/README.md">Read full lesson 09 →</a></p>
+</section>
+
+<!-- 10 -->
+<section class="dsec" id="l10" style="--c:#4f46e5">
+  <h2><span class="ln">10</span> 🧪 Testing UI</h2>
+  <p class="d">Does the board still stand? — unit, component, end-to-end, visual, and the smoke test.</p>
+  <svg viewBox="0 0 940 305" role="img"><rect class="box" x="40" y="40" width="200" height="120" rx="14"/><text class="t m" x="140" y="70">🔬 unit</text><text class="s m" x="140" y="96">pure functions:</text><text class="s m" x="140" y="118">StudentCard(s) gives</text><text class="s m" x="140" y="140">the right text</text><g transform="translate(40,40)"><circle r="11" class="nc"/><text class="nt" dy="4">1</text></g><rect class="box" x="270" y="40" width="200" height="120" rx="14"/><text class="t m" x="370" y="70">🧩 component</text><text class="s m" x="370" y="96">render a piece with</text><text class="s m" x="370" y="118">test data; assert the</text><text class="s m" x="370" y="140">DOM (Testing Library)</text><g transform="translate(270,40)"><circle r="11" class="nc"/><text class="nt" dy="4">2</text></g><rect class="box" x="500" y="40" width="200" height="120" rx="14"/><text class="t m" x="600" y="70">🧭 end-to-end</text><text class="s m" x="600" y="96">a real browser fills the</text><text class="s m" x="600" y="118">form (Playwright) —</text><text class="s m" x="600" y="140">few, slow, priceless</text><g transform="translate(500,40)"><circle r="11" class="nc"/><text class="nt" dy="4">3</text></g><rect class="box" x="730" y="40" width="180" height="120" rx="14"/><text class="t m" x="820" y="70">📸 visual</text><text class="s m" x="820" y="96">screenshot diffs</text><text class="s m" x="820" y="118">catch the CSS</text><text class="s m" x="820" y="140">nobody meant to change</text><g transform="translate(730,40)"><circle r="11" class="nc"/><text class="nt" dy="4">4</text></g><rect class="soft" x="40" y="195" width="870" height="90" rx="14"/><text class="t m" x="475" y="222">🧪 the pyramid: many unit, some component, few end-to-end</text><text class="s m" x="475" y="248">ui/smoke_test.py is the zero-dependency version: lang, h1, labels, alt, tokens, focus, the API — 10 checks in 30 lines, in CI (CI/CD school) ·</text><text class="s m" x="475" y="270">ui/tests/board.spec.js shows the same intent in Playwright: getByRole, getByLabel — test what users see, not class names</text>
+  </svg>
+  <p class="foot"><a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-10-testing/lessons/10-testing/README.md">Read full lesson 10 →</a></p>
+</section>
+
+<!-- 11 -->
+<section class="dsec" id="l11" style="--c:#4f46e5">
+  <h2><span class="ln">11</span> 📨 Talking to backends</h2>
+  <p class="d">Filling in the counter's slips — CORS, tokens in the browser, loading and error states, XSS.</p>
+  <svg viewBox="0 0 940 305" role="img"><rect class="box" x="40" y="40" width="270" height="110" rx="14"/><text class="t m" x="175" y="70">🚧 CORS</text><text class="s m" x="175" y="96">the counter says which origins may</text><text class="s m" x="175" y="118">call it: Access-Control-Allow-Origin</text><g transform="translate(40,40)"><circle r="11" class="nc"/><text class="nt" dy="4">1</text></g><rect class="box" x="360" y="40" width="270" height="110" rx="14"/><text class="t m" x="495" y="70">🪪 tokens in the browser</text><text class="s m" x="495" y="96">no API keys in JS · short-lived user</text><text class="s m" x="495" y="118">tokens · httpOnly cookies for sessions</text><g transform="translate(360,40)"><circle r="11" class="nc"/><text class="nt" dy="4">2</text></g><rect class="box" x="680" y="40" width="230" height="110" rx="14"/><text class="t m" x="795" y="70">🛡️ XSS</text><text class="s m" x="795" y="96">textContent, never innerHTML</text><text class="s m" x="795" y="118">with data · CSP header</text><g transform="translate(680,40)"><circle r="11" class="nc"/><text class="nt" dy="4">3</text></g><line class="arr" x1="310" y1="95" x2="356" y2="95"/><line class="arr" x1="630" y1="95" x2="676" y2="95"/><rect class="soft" x="40" y="185" width="870" height="100" rx="14"/><text class="t m" x="475" y="212">⏳ every request has three faces: loading · success · error</text><text class="s m" x="475" y="238">aria-busy + &#39;Loading…&#39; · the list · &#39;Could not load: 503&#39; with a retry — ?slow=1 and ?fail=1 on the mock API make each one appear ·</text><text class="s m" x="475" y="262">validate on the board for kindness, on the counter for truth (the API school&#39;s 400 with problems)</text><g transform="translate(40,185)"><circle r="11" class="nc"/><text class="nt" dy="4">4</text></g>
+  </svg>
+  <p class="foot"><a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-11-talking-to-backends/lessons/11-talking-to-backends/README.md">Read full lesson 11 →</a></p>
+</section>
+
+<!-- 12 -->
+<section class="dsec" id="l12" style="--c:#4f46e5">
+  <h2><span class="ln">12</span> 🚚 Build, deploy &amp; observe</h2>
+  <p class="d">Pinning the board up — static hosting, CDN, cache busting, monitoring; the capstone.</p>
+  <svg viewBox="0 0 940 305" role="img"><rect class="box" x="40" y="40" width="270" height="110" rx="14"/><text class="t m" x="175" y="70">🏗️ build</text><text class="s m" x="175" y="96">bundle + hash filenames ·</text><text class="s m" x="175" y="118">(the board needs none — 3 files)</text><g transform="translate(40,40)"><circle r="11" class="nc"/><text class="nt" dy="4">1</text></g><rect class="box" x="360" y="40" width="270" height="110" rx="14"/><text class="t m" x="495" y="70">🚚 deploy static</text><text class="s m" x="495" y="96">GitHub Pages / S3 + CloudFront /</text><text class="s m" x="495" y="118">any CDN — the board is just files</text><g transform="translate(360,40)"><circle r="11" class="nc"/><text class="nt" dy="4">2</text></g><rect class="box" x="680" y="40" width="230" height="110" rx="14"/><text class="t m" x="795" y="70">👀 observe</text><text class="s m" x="795" y="96">JS errors + web vitals from</text><text class="s m" x="795" y="118">real users · a request id per call</text><g transform="translate(680,40)"><circle r="11" class="nc"/><text class="nt" dy="4">3</text></g><line class="arr" x1="310" y1="95" x2="356" y2="95"/><line class="arr" x1="630" y1="95" x2="676" y2="95"/><rect class="soft" x="40" y="185" width="870" height="100" rx="14"/><text class="t m" x="475" y="212">🧭 the whole path: HTML → CSS → JS → state → a11y → tokens → fast → tested → talks to the counter → pinned up</text><text class="s m" x="475" y="238">this very site (every School page) is deployed exactly this way: static files, GitHub Pages, cache-busted by commit — the CI/CD school&#39;s mailroom delivers it ·</text><text class="s m" x="475" y="262">capstone: add a homework list to the board with its own state, component, a11y pass, smoke checks and a deploy</text><g transform="translate(40,185)"><circle r="11" class="nc"/><text class="nt" dy="4">4</text></g>
+  </svg>
+  <p class="foot"><a href="https://github.com/BaluRaut/learn-ui-school/blob/lesson-12-build-deploy-observe/lessons/12-build-deploy-observe/README.md">Read full lesson 12 →</a></p>
+</section>
+
+<footer>
+  Learn UI School · the board is in the repo · <a href="index.html">Course home</a> · <a href="lesson-diagrams.html">Lesson diagrams</a> · <a href="https://github.com/BaluRaut/learn-ui-school">GitHub</a> · <a href="https://baluraut.github.io/school/dictionary.html">📖 the Dictionary</a> · <a href="https://baluraut.github.io/school/">🏫 all schools</a> · <a href="https://github.com/BaluRaut/learn-ui-school/issues">🐛 found a mistake?</a>
+</footer>
+</div>
+</body>
+</html>
