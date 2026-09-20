@@ -10,8 +10,8 @@ The thing every other school builds *towards* — and the three files that
 make it. Real files you will use all the way through:
 
 - [ui/index.html](../../ui/index.html) — the notice board itself (~80 lines)
-- [ui/styles.css](../../ui/styles.css) — the uniform and the layout (~60 lines)
-- [ui/app.js](../../ui/app.js) — state, events and fetch (~100 lines, no framework)
+- [ui/styles.css](../../ui/styles.css) — the uniform and the layout (~50 lines)
+- [ui/app.js](../../ui/app.js) — state, events and fetch (~90 lines, no framework)
 - [ui/mock_api.py](../../ui/mock_api.py) — a tiny counter for the board to talk to
 
 > 🎒 **Before you start:** you need a **browser** and **Python 3** (only to
