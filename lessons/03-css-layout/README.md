@@ -71,7 +71,7 @@ rewrite for every new device.
 
 ## 🔧 How (in this repo)
 
-[ui/styles.css](../../ui/styles.css) is ~60 lines in three parts: tokens
+[ui/styles.css](../../ui/styles.css) is about fifty lines in three parts: tokens
 (lesson 08), layout (this lesson — `body`, `.board-head` flex, `main` grid,
 `.cards` auto-fill grid), then components. The single media query at
 `min-width: 720px` is the whole "desktop" design.
