@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="mr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Quiz — Learn UI School</title>
-<meta name="description" content="Self-test quiz for Learn UI School — 15 questions with explanations.">
-<meta property="og:title" content="Quiz — Learn UI School">
-<meta property="og:description" content="Self-test quiz for Learn UI School — 15 questions with explanations.">
-<meta property="og:image" content="https://baluraut.github.io/learn-ui-school/images/big-picture-4k.png">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title data-en="Quiz — Learn UI School">प्रश्नमंजुषा — Learn UI School</title>
+<meta content="Self-test quiz for Learn UI School — 15 questions with explanations." name="description"/>
+<meta content="Quiz — Learn UI School" property="og:title"/>
+<meta content="Self-test quiz for Learn UI School — 15 questions with explanations." property="og:description"/>
+<meta content="https://baluraut.github.io/learn-ui-school/images/big-picture-4k.png" property="og:image"/>
+<meta content="website" property="og:type"/>
+<meta content="summary_large_image" name="twitter:card"/>
 <style>
   :root { --bg:#f8fafc; --card:#fff; --ink:#0f172a; --muted:#475569; --line:#e2e8f0; --accent:#db2777; --ok:#16a34a; --blue:#2563eb; --bad:#dc2626; }
   @media (prefers-color-scheme: dark) { :root { --bg:#0b1220; --card:#131c2e; --ink:#e2e8f0; --muted:#94a3b8; --line:#253349; } }
@@ -51,18 +52,30 @@
 .reset { margin-top:20px; background:var(--accent); color:#fff; border:none; border-radius:10px; padding:10px 18px; font:inherit; font-weight:700; cursor:pointer; }
 .parts{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px} .pbtn{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:6px 14px;font:inherit;font-size:.88rem;cursor:pointer} .pbtn.on{background:var(--accent);color:#fff;border-color:var(--accent)}
 </style>
-</head>
-<body>
 
+<style id="i18n-css">
+#lang-pick{position:fixed;top:10px;right:10px;z-index:9999;font:600 .85rem -apple-system,"Segoe UI",Helvetica,Arial,sans-serif;background:var(--card,#fff);color:var(--ink,#0f172a);border:1px solid var(--line,#e2e8f0);border-radius:999px;padding:6px 12px;box-shadow:0 2px 10px rgba(0,0,0,.08);cursor:pointer}
+html[lang="mr"] body{font-family:"Noto Sans Devanagari","Mukta","Devanagari Sangam MN","Nirmala UI",-apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+html[lang="mr"] svg text{font-family:"Noto Sans Devanagari","Mukta","Devanagari Sangam MN","Nirmala UI",sans-serif}
+.i18n-en{display:block;font-size:.86em;line-height:1.35;color:var(--muted,#64748b);font-weight:400;margin-top:2px;font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+.i18n-en.i{display:inline;margin:0 0 0 .3em;font-size:.92em;opacity:.85}
+.i18n-en.i::before{content:"· "}
+h1 .i18n-en,h2 .i18n-en{font-size:.58em;margin-top:4px} h3 .i18n-en{font-size:.78em}
+.lab .i18n-en,.wk .i18n-en{color:inherit;opacity:.85}
+html[lang="mr"] .i18n-en{font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+@media print{#lang-pick{display:none}}
+</style></head>
+<body><select aria-label="Language / भाषा" id="lang-pick" onchange="schoolSetLang(this.value)">
+<option value="both">🇮🇳🇬🇧 मराठी + English</option><option value="mr">🇮🇳 मराठी</option><option value="en">🇬🇧 English</option></select>
 <div class="wrap">
-<p><a href="index.html">← Back to the course home</a></p>
-<h1>🧪 The 📌 UI quiz</h1>
-<p class="sub">15 questions — pick an answer, get the why. Filter by Part below. One attempt per question (until reset). Your best score is saved in this browser.</p>
-<div class="scorebox"><div class="score" id="score">0 / 15 · best: —</div></div>
-<div class="parts" id="parts"><button class="pbtn on" onclick="setPart(0)">All 15</button><button class="pbtn" onclick="setPart(1)">🧱 Part 1 board</button><button class="pbtn" onclick="setPart(2)">🚚 Part 2 shipping</button></div>
+<p data-en='&lt;a href="index.html"&gt;← Back to the course home&lt;/a&gt;'><a href="index.html">← कोर्सच्या मुख्य पानाकडे परत</a></p>
+<h1 data-en="🧪 The 📌 UI quiz">🧪 📌 UI प्रश्नमंजुषा</h1>
+<p class="sub" data-en="15 questions — pick an answer, get the why. Filter by Part below. One attempt per question (until reset). Your best score is saved in this browser.">15 प्रश्न — उत्तर निवडा, कारण मिळवा. खाली भागानुसार गाळा. प्रत्येक प्रश्नाला एकच प्रयत्न (reset पर्यंत). तुमचा सर्वोत्तम गुण या ब्राउझरमध्ये जपला जातो.</p>
+<div class="scorebox"><div class="score" data-en="0 / 15 · best: —" id="score">0 / 15 · सर्वोत्तम: —</div></div>
+<div class="parts" id="parts"><button class="pbtn on" data-en="All 15" onclick="setPart(0)">सर्व 15</button><button class="pbtn" data-en="🧱 Part 1 board" onclick="setPart(1)">🧱 भाग 1 फलक</button><button class="pbtn" data-en="🚚 Part 2 shipping" onclick="setPart(2)">🚚 भाग 2 पाठवणे</button></div>
 <div id="quiz"></div>
-<button class="reset" onclick="reset()">↺ Reset &amp; retake</button>
-<footer>Part of <a href="https://baluraut.github.io/school/">🏫 The School</a> · <a href="index.html">course home</a> · <a href="https://github.com/BaluRaut/learn-ui-school/issues">🐛 found a mistake?</a></footer>
+<button class="reset" data-en="↺ Reset &amp;amp; retake" onclick="reset()">↺ Reset &amp; पुन्हा द्या</button>
+<footer data-en='Part of &lt;a href="https://baluraut.github.io/school/"&gt;🏫 The School&lt;/a&gt; · &lt;a href="index.html"&gt;course home&lt;/a&gt; · &lt;a href="https://github.com/BaluRaut/learn-ui-school/issues"&gt;🐛 found a mistake?&lt;/a&gt;'><a href="https://baluraut.github.io/school/">🏫 द स्कूल</a> चा भाग · <a href="index.html">कोर्स मुख्य पान</a> · <a href="https://github.com/BaluRaut/learn-ui-school/issues">🐛 चूक सापडली?</a></footer>
 </div>
 <script>
 var QS = [{"q": "The three files of any board?", "o": ["Python, SQL, YAML", "HTML (what is pinned), CSS (how it looks), JavaScript (what happens when touched)", "React, Node, npm"], "c": 1, "w": "L01: the browser turns them into the DOM and paints it.", "p": 1}, {"q": "Why &lt;button&gt; instead of &lt;div onclick&gt;?", "o": ["It looks nicer", "Keyboard, focus and screen-reader semantics for free — a div has none", "Divs are slower"], "c": 1, "w": "L02/L06: semantics = meaning every tool understands.", "p": 1}, {"q": "Every &lt;input&gt; needs…", "o": ["A placeholder", "A &lt;label for=&gt; (or wrapping label) — the name tools and users read", "An id only"], "c": 1, "w": "L02.", "p": 1}, {"q": "One board on a phone and on the wall — the habit?", "o": ["Fixed 1200px width", "Mobile first: one column, relative units, @media (min-width) adds columns, images max-width:100%", "Two separate sites"], "c": 1, "w": "L03.", "p": 1}, {"q": "UI = render(state) means…", "o": ["Render once at load", "Change state, call render(); never edit the DOM by hand in a second place", "Use a framework"], "c": 1, "w": "L05: one source of truth.", "p": 1}, {"q": "Rendering user text into the page — the safe way?", "o": ["innerHTML = name", "textContent = name (or a framework's escaping) — innerHTML with data is XSS", "document.write"], "c": 1, "w": "L04/L11.", "p": 1}, {"q": "A screen reader user cannot enrol. First checks?", "o": ["Add more colours", "Keyboard reach and focus, labels on inputs, the status region announcing results", "Bigger buttons"], "c": 1, "w": "L06.", "p": 1}, {"q": "What every framework automates?", "o": ["HTTP", "State → view with diffing, components, events — the ideas of lessons 04–05", "CSS"], "c": 1, "w": "L07: learn the ideas before any framework's API.", "p": 2}, {"q": "Dark mode done right is…", "o": ["A second stylesheet", "A token swap: components never change, --bg/--ink change", "JavaScript that edits every element"], "c": 1, "w": "L08.", "p": 2}, {"q": "Core Web Vitals measure…", "o": ["Bundle size", "What 'fast' means to a person: biggest paint (LCP), responsiveness (INP), layout stability (CLS)", "Server CPU"], "c": 1, "w": "L09: measure on a slow phone.", "p": 2}, {"q": "Hashed filenames + long max-age?", "o": ["Unrelated", "Cache forever safely: a new build gets a new name, so users never see a stale file", "Only for images"], "c": 1, "w": "L09/L12.", "p": 2}, {"q": "Which tests should be few, slow and priceless?", "o": ["Unit tests", "End-to-end tests in a real browser — a handful of golden paths", "Linting"], "c": 1, "w": "L10: the pyramid.", "p": 2}, {"q": "CORS is…", "o": ["A browser bug", "The counter saying which origins may call it from a browser (Access-Control-Allow-Origin)", "An HTTP method"], "c": 1, "w": "L11.", "p": 2}, {"q": "The board validated the form. The counter must…", "o": ["Trust it", "Validate again — the board is kindness, the counter is truth (anyone can send a raw request)", "Skip validation for speed"], "c": 1, "w": "L11: the API school's 400 with problems.", "p": 2}, {"q": "Where should an API key live for a browser app?", "o": ["In the JS bundle", "Not in the browser at all — short-lived user tokens or httpOnly cookies; keys stay on servers", "In localStorage"], "c": 1, "w": "L11: anything shipped to the browser is public.", "p": 2}];
@@ -99,5 +112,42 @@ function update() {
 function reset() { answered={}; score=0; render(); update(); }
 render(); update();
 </script>
-</body>
+
+<script id="i18n-js">
+var I18N_INLINE={A:1,SPAN:1,CODE:1,B:1,I:1,EM:1,STRONG:1,BUTTON:1,LABEL:1,SUMMARY:1,SMALL:1,KBD:1};
+function schoolSetLang(l){
+  if(l!=='en'&&l!=='mr'&&l!=='both') l='both';
+  try{localStorage.setItem('school-lang2',l)}catch(e){}
+  document.documentElement.setAttribute('lang', l==='en' ? 'en' : 'mr');
+  document.querySelectorAll('[data-en]').forEach(function(el){
+    if(!el.hasAttribute('data-mr')) el.setAttribute('data-mr', el.innerHTML);
+    var en=el.getAttribute('data-en'), mr=el.getAttribute('data-mr');
+    var svg = el.namespaceURI && el.namespaceURI.indexOf('svg')>-1;
+    if(svg){
+      el.innerHTML = (l==='en') ? en : mr;
+      var t=el.querySelector('title'); if(t) t.remove();
+      if(l==='both'){ t=document.createElementNS('http://www.w3.org/2000/svg','title'); t.textContent=en.replace(/<[^>]+>/g,''); el.insertBefore(t, el.firstChild); }
+      return;
+    }
+    if(l==='en') el.innerHTML = en;
+    else if(l==='mr') el.innerHTML = mr;
+    else if(en.replace(/\s+/g,' ').trim()===mr.replace(/\s+/g,' ').trim()) el.innerHTML = mr;
+    else {
+      var e2=en.replace(/<span class="(ln|num|wk)">[\s\S]*?<\/span>\s*/g,'');
+      if(e2.charAt(0)!=='<' && mr.charAt(0)!=='<'){           /* drop the prefix both languages share, e.g. "01 · 🏢 " */
+        var i=0; while(i<e2.length&&i<mr.length&&e2.charAt(i)===mr.charAt(i)) i++;
+        var cut=e2.lastIndexOf(' ',i); if(cut>0 && cut<e2.length-1) e2=e2.slice(cut+1);
+      }
+      el.innerHTML = mr + '<span class="i18n-en'+(I18N_INLINE[el.tagName]?' i':'')+'">'+e2+'</span>';
+    }
+  });
+  document.querySelectorAll('[data-en-ph]').forEach(function(el){
+    if(!el.hasAttribute('data-mr-ph')) el.setAttribute('data-mr-ph', el.getAttribute('placeholder'));
+    el.setAttribute('placeholder', (l==='en') ? el.getAttribute('data-en-ph') : (l==='mr' ? el.getAttribute('data-mr-ph') : el.getAttribute('data-mr-ph')+' / '+el.getAttribute('data-en-ph')));
+  });
+  var p=document.getElementById('lang-pick'); if(p) p.value=l;
+}
+(function(){ var l='both'; try{ l=localStorage.getItem('school-lang2')||'both'; }catch(e){}
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',function(){schoolSetLang(l)}); else schoolSetLang(l); })();
+</script></body>
 </html>
